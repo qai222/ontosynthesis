@@ -104,7 +104,8 @@ def export_python_class(onto: Ontology, definition: str, class_name: str, iri: s
         python_class_name = to_camel_case(python_class_name) + suffix
         python_class_name = python_class_name.strip().replace("(", "_").replace(")", "")
         # `set_name` changes IRI!! do not use it (at least for now)
-        rename_template = f"# {python_class_name}.set_name({python_class_name}, '{python_class_name}')"
+        # rename_template = f"# {python_class_name}.set_name({python_class_name}, '{python_class_name}')"
+        rename_template = f"{python_class_name}.label.append('{python_class_name}')"
     else:
         raise TypeError
     # if "(" in python_class_name and ")" in python_class_name:
@@ -114,7 +115,7 @@ def export_python_class(onto: Ontology, definition: str, class_name: str, iri: s
     template = f"""
 {python_class_name} = onto.search_one(iri="{iri}")
 {rename_template}
-# {definition}
+{python_class_name}.isDefinedBy.append('{definition}')
     """
     return template, python_class_name
 
