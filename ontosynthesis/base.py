@@ -1,55 +1,38 @@
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
 from typing import Type
-from uuid import uuid4
 
-from owlready2 import DataProperty, Thing
-from pydantic import BaseModel
+from owlready2 import Thing
+from owlready2 import ThingClass, DataProperty, ObjectProperty, get_ontology
 
-from protege import ontologies as onto
+from ontosynthesis.resource import afo
 
+ONTO = get_ontology("http://ontosynthesis.org/ontosynthesis.owl")
+ONTO.imported_ontologies.append(afo.onto)
 
-def str_uuid() -> str:
-    return str(uuid4())
-
-
-class OsThing(ABC, BaseModel):
-    identifier: str = ""
-    iri: str | None = None
-
-    @property
-    def onto_instance(self):
-        assert self.iri is not None
-        return onto.onto.search_one(iri=self.iri)
-
-    @abstractmethod
-    def create_ontology(self) -> Thing:
-        pass
-
-    def model_post_init(self, *args) -> None:
-        # add uuid if not specified
-        if self.identifier == "":
-            self.identifier = str_uuid()
-
-        with onto.onto:
-            instance = self.create_ontology()
-
-        self.iri = instance.iri
+with ONTO:
+    has_value = ONTO.search_one(iri="http://purl.allotrope.org/ontologies/property#AFX_0000690")
+    has_value.python_name = "has_value"
 
 
-def create_ontology_instance(onto_cls: Type, name: str | None = None):
-    onto_name = f"{onto_cls.__name__}: {name}"
-    if name is None:
-        return onto_cls()
-    else:
-        return onto_cls(name=onto_name)
+def create_individual(cls: ThingClass):
+    with ONTO:
+        ind = cls()
+        # TODO not very sure about this...
+        ind_suffix = ind.iri.split("#")[-1]
+        cls_suffix = cls.iri.split("#")[-1]
+        index = ind_suffix[len(cls_suffix):]
+
+        lab = f"{list(cls.label)[0]} ({index})"
+        ind.label.append(lab)
 
 
-with onto.onto:
-    class has_string_value(DataProperty):
-        range = [str]
+def create_relation(sub: Thing, pred: Type[ObjectProperty], obj: Thing, ) -> None:
+    with ONTO:
+        getattr(sub, pred.python_name).append(obj)
 
 
-    class has_numeric_value(DataProperty):
-        range = [float, int]
+def create_relation_data(sub: Thing, pred: Type[DataProperty], obj: int | float | str) -> None:
+    with ONTO:
+        if obj is not None:
+            getattr(sub, pred.python_name).append(obj)
