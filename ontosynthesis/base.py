@@ -4,7 +4,7 @@ from typing import Type
 
 from owlready2 import Thing
 from owlready2 import ThingClass, DataProperty, ObjectProperty, get_ontology, InverseFunctionalProperty, \
-    FunctionalProperty, TransitiveProperty
+    FunctionalProperty
 
 from ontosynthesis.resource import afo
 
@@ -26,10 +26,6 @@ with ONTO:
 
     class has_value_bijective(has_value, InverseFunctionalProperty, FunctionalProperty):
         python_name = "has_value_bijective"
-
-
-    class has_ingredient(afo.has_ingredient, TransitiveProperty):
-        python_name = "has_ingredient"
 
 
 def create_individual(cls: ThingClass, label: str | None = None):
