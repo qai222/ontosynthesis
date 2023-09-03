@@ -3,7 +3,8 @@ from __future__ import annotations
 from typing import Type
 
 from owlready2 import Thing
-from owlready2 import ThingClass, DataProperty, ObjectProperty, get_ontology
+from owlready2 import ThingClass, DataProperty, ObjectProperty, get_ontology, InverseFunctionalProperty, \
+    FunctionalProperty, TransitiveProperty
 
 from ontosynthesis.resource import afo
 
@@ -15,16 +16,48 @@ with ONTO:
     has_value.python_name = "has_value"
 
 
-def create_individual(cls: ThingClass):
+    class has_value_functional(has_value, FunctionalProperty):
+        python_name = "has_value_functional"
+
+
+    class has_value_inverse_functional(has_value, InverseFunctionalProperty):
+        python_name = "has_value_inverse_functional"
+
+
+    class has_value_bijective(has_value, InverseFunctionalProperty, FunctionalProperty):
+        python_name = "has_value_bijective"
+
+
+    class has_ingredient(afo.has_ingredient, TransitiveProperty):
+        python_name = "has_ingredient"
+
+
+def create_individual(cls: ThingClass, label: str | None = None):
     with ONTO:
         ind = cls()
         # TODO not very sure about this...
         ind_suffix = ind.iri.split("#")[-1]
         cls_suffix = cls.iri.split("#")[-1]
         index = ind_suffix[len(cls_suffix):]
-
-        lab = f"{list(cls.label)[0]} ({index})"
+        if label is None:
+            lab = f"{list(cls.label)[0]}__{index}"
+        else:
+            lab = f"{list(cls.label)[0]}__{label}"
         ind.label.append(lab)
+        return ind
+
+        # # include label in iri
+        # if label is None:
+        #     ind = cls()
+        #     ind_suffix = ind.iri.split("#")[-1]
+        #     cls_suffix = cls.iri.split("#")[-1]
+        #     index = ind_suffix[len(cls_suffix):]
+        #     lab = f"{list(cls.label)[0]}__{index}"
+        # else:
+        #     lab = f"{list(cls.label)[0]}__{label}"
+        #     ind = cls(name=lab)
+        # ind.label.append(lab)
+        # return ind
 
 
 def create_relation(sub: Thing, pred: Type[ObjectProperty], obj: Thing, ) -> None:
@@ -33,6 +66,10 @@ def create_relation(sub: Thing, pred: Type[ObjectProperty], obj: Thing, ) -> Non
 
 
 def create_relation_data(sub: Thing, pred: Type[DataProperty], obj: int | float | str) -> None:
+    if obj is None:
+        return
     with ONTO:
-        if obj is not None:
+        if issubclass(pred, FunctionalProperty):
+            setattr(sub, pred.python_name, obj)
+        else:
             getattr(sub, pred.python_name).append(obj)
