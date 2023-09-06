@@ -1,0 +1,1271 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://ontosynthesis.org/ontosynthesis.owl"
+         xmlns="http://ontosynthesis.org/ontosynthesis.owl#"
+         xmlns:owlr="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#"
+         xmlns:prop="http://purl.allotrope.org/ontologies/property#"
+         xmlns:obo="http://purl.obolibrary.org/obo/"
+         xmlns:qudt="http://qudt.org/schema/qudt#">
+
+<owl:Ontology rdf:about="http://ontosynthesis.org/ontosynthesis.owl">
+  <owl:imports rdf:resource="http://purl.allotrope.org/voc/afo/REC/2023/06/afo"/>
+</owl:Ontology>
+
+<owl:DatatypeProperty rdf:about="#has_value_functional">
+  <rdfs:subPropertyOf rdf:resource="http://purl.allotrope.org/ontologies/property#AFX_0000690"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value_functional</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value_inverse_functional">
+  <rdfs:subPropertyOf rdf:resource="http://purl.allotrope.org/ontologies/property#AFX_0000690"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value_inverse_functional</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value_bijective">
+  <rdfs:subPropertyOf rdf:resource="http://purl.allotrope.org/ontologies/property#AFX_0000690"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value_bijective</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:NamedIndividual rdf:about="#afe_00001531">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0000153"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reactor__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010991">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001099"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010601"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010992"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010606"/>
+  <prop:AFX_0002793 rdf:resource="#afm_00010602"/>
+  <prop:AFX_0002793 rdf:resource="#afm_00010603"/>
+  <prop:AFX_0002793 rdf:resource="#afm_00010604"/>
+  <prop:AFX_0002793 rdf:resource="#afm_00010605"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChemicalMixture__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010601">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000086 rdf:resource="#afq_00001661"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__CATALYST"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010601"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017451">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010601"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iron</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017452">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010601"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__2</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[Fe]</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017453">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010601"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__3</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/Fe</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00028151">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002815"/>
+  <qudt:quantityKind rdf:resource="#QuantityKind__mass"/>
+  <qudt:unit rdf:resource="#UnitOfMeasure__GRAM"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance__1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7.0</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#QuantityKind__mass">
+  <rdf:type rdf:resource="http://qudt.org/schema/qudt#QuantityKind"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QuantityKind__mass</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UnitOfMeasure__GRAM">
+  <rdf:type rdf:resource="http://qudt.org/schema/qudt#Unit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnitOfMeasure__GRAM</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GRAM</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afq_00001661">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000166"/>
+  <prop:AFX_0002684 rdf:resource="#afr_00028151"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance_quality__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SynthesisRole__CATALYST">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000344"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SynthesisRole__CATALYST</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CATALYST</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afp_00037431">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003743"/>
+  <obo:RO_0002338 rdf:resource="#afe_00004071"/>
+  <prop:AFX_0000072 rdf:resource="#afr_00009511"/>
+  <obo:RO_0002339 rdf:resource="#afe_00001531"/>
+  <obo:RO_0000057 rdf:resource="#afm_00010601"/>
+  <obo:RO_0000057 rdf:resource="#afe_00021681"/>
+  <obo:BFO_0000063 rdf:resource="#afp_00037432"/>
+  <obo:BFO_0000063 rdf:resource="#afp_00037111"/>
+  <obo:BFO_0000063 rdf:resource="#afp_00037433"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adding_material__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afe_00021681">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0002168"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TransferringDevice__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afe_00004071">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0000407"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Container__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00009511">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000951"/>
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002298"/>
+  <prop:AFX_0002816 rdf:resource="#afp_00037431"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Duration__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010992">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001099"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010602"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010603"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010604"/>
+  <prop:AFX_0000365 rdf:resource="#afm_00010605"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010992"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChemicalMixture__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010602">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000086 rdf:resource="#afq_00001662"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__REACTANT"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010602"/>
+  <prop:AFX_0002846 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017454">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010602"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__4</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4(4′chlorophenyl)3-nitropyridine</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017455">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010602"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__5</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ClC1=CC=C(C=C1)C1=C(C=NC=C1)[N+](=O)[O-]</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017456">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010602"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__6</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/C11H7ClN2O2/c12-9-3-1-8(2-4-9)10-5-6-13-7-11(10)14(15)16/h1-7H</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00028152">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002815"/>
+  <qudt:quantityKind rdf:resource="#QuantityKind__mass"/>
+  <qudt:unit rdf:resource="#UnitOfMeasure__GRAM"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance__2</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">8.4</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afq_00001662">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000166"/>
+  <prop:AFX_0002684 rdf:resource="#afr_00028152"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010992"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance_quality__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SynthesisRole__REACTANT">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000344"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010992"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SynthesisRole__REACTANT</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">REACTANT</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010603">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000086 rdf:resource="#afq_00001663"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__SOLVENT"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010603"/>
+  <prop:AFX_0002846 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__3</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017457">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010603"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__7</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">water</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017458">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010603"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__8</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">O</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00017459">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010603"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__9</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/H2O/h1H2</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00028153">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002815"/>
+  <qudt:quantityKind rdf:resource="#QuantityKind__volume"/>
+  <qudt:unit rdf:resource="#UnitOfMeasure__MILLILITER"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance__3</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100.0</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#QuantityKind__volume">
+  <rdf:type rdf:resource="http://qudt.org/schema/qudt#QuantityKind"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QuantityKind__volume</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">volume</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UnitOfMeasure__MILLILITER">
+  <rdf:type rdf:resource="http://qudt.org/schema/qudt#Unit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnitOfMeasure__MILLILITER</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MILLILITER</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afq_00001663">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000166"/>
+  <prop:AFX_0002684 rdf:resource="#afr_00028153"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010992"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance_quality__3</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SynthesisRole__SOLVENT">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000344"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010992"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SynthesisRole__SOLVENT</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOLVENT</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010604">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000086 rdf:resource="#afq_00001664"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__SOLVENT"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010604"/>
+  <prop:AFX_0002846 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__4</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174510">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010604"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__10</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">acetic acid</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174511">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010604"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__11</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C(C)(=O)O</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174512">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010604"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__12</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/C2H4O2/c1-2(3)4/h1H3,(H,3,4)</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00028154">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002815"/>
+  <qudt:quantityKind rdf:resource="#QuantityKind__volume"/>
+  <qudt:unit rdf:resource="#UnitOfMeasure__MILLILITER"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance__4</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">35.0</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afq_00001664">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000166"/>
+  <prop:AFX_0002684 rdf:resource="#afr_00028154"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010992"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance_quality__4</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010605">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000086 rdf:resource="#afq_00001665"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__SOLVENT"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010605"/>
+  <prop:AFX_0002846 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__5</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174513">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010605"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__13</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">n-propanol</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174514">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010605"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__14</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C(CC)O</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174515">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010605"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__15</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/C3H8O/c1-2-3-4/h4H,2-3H2,1H3</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00028155">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002815"/>
+  <qudt:quantityKind rdf:resource="#QuantityKind__volume"/>
+  <qudt:unit rdf:resource="#UnitOfMeasure__MILLILITER"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance__5</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afq_00001665">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000166"/>
+  <prop:AFX_0002684 rdf:resource="#afr_00028155"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010992"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance_quality__5</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afp_00037432">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003743"/>
+  <obo:RO_0002338 rdf:resource="#afe_00004072"/>
+  <prop:AFX_0000072 rdf:resource="#afr_00009512"/>
+  <obo:RO_0002339 rdf:resource="#afe_00001531"/>
+  <obo:RO_0000057 rdf:resource="#afm_00010992"/>
+  <obo:RO_0000057 rdf:resource="#afe_00021682"/>
+  <obo:BFO_0000063 rdf:resource="#afp_00037433"/>
+  <obo:BFO_0000063 rdf:resource="#afp_00037111"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adding_material__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afe_00021682">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0002168"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TransferringDevice__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afe_00004072">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0000407"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Container__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00009512">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000951"/>
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002298"/>
+  <prop:AFX_0002816 rdf:resource="#afp_00037432"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Duration__2</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010606">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000086 rdf:resource="#afq_00001666"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__SOLVENT"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010606"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__6</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174516">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010606"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__16</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ethylacetate</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174517">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010606"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__17</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C(C)OC(C)=O</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174518">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010606"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__18</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/C4H8O2/c1-3-6-4(2)5/h3H2,1-2H3</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00028156">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002815"/>
+  <qudt:quantityKind rdf:resource="#QuantityKind__moles"/>
+  <qudt:unit rdf:resource="#UnitOfMeasure__MOLE"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance__6</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#QuantityKind__moles">
+  <rdf:type rdf:resource="http://qudt.org/schema/qudt#QuantityKind"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QuantityKind__moles</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">moles</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UnitOfMeasure__MOLE">
+  <rdf:type rdf:resource="http://qudt.org/schema/qudt#Unit"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UnitOfMeasure__MOLE</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MOLE</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afq_00001666">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000166"/>
+  <prop:AFX_0002684 rdf:resource="#afr_00028156"/>
+  <obo:RO_0002314 rdf:resource="#afm_00010991"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AmountOfSubstance_quality__6</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afp_00037433">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003743"/>
+  <obo:RO_0002338 rdf:resource="#afe_00004073"/>
+  <prop:AFX_0000072 rdf:resource="#afr_00009513"/>
+  <obo:RO_0002339 rdf:resource="#afe_00001531"/>
+  <obo:RO_0000057 rdf:resource="#afm_00010606"/>
+  <obo:RO_0000057 rdf:resource="#afe_00021683"/>
+  <obo:BFO_0000063 rdf:resource="#afp_00037111"/>
+  <obo:BFO_0000062 rdf:resource="#afp_00037431"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adding_material__3</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afe_00021683">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0002168"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TransferringDevice__3</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afe_00004073">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0000407"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Container__3</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00009513">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000951"/>
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002298"/>
+  <prop:AFX_0002816 rdf:resource="#afp_00037433"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Duration__3</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afp_00037111">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003711"/>
+  <prop:AFX_0002802 rdf:resource="#afr_00026211"/>
+  <prop:AFX_0002802 rdf:resource="#afr_00015841"/>
+  <obo:RO_0000057 rdf:resource="#afe_00001531"/>
+  <prop:AFX_0000696 rdf:resource="#afm_00010991"/>
+  <prop:AFX_0000546 rdf:resource="#afm_00010607"/>
+  <obo:BFO_0000062 rdf:resource="#afp_00037431"/>
+  <obo:BFO_0000062 rdf:resource="#afp_00037432"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChemicalReaction_molecular__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afm_00010607">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001060"/>
+  <obo:RO_0000087 rdf:resource="#SynthesisRole__UNSPECIFIED"/>
+  <obo:RO_0002131 rdf:resource="#afm_00010607"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfCompound__7</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174519">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010607"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__19</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3-Amino-4-(4′-chlorophenyl)pyridine</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174520">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010607"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__20</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NC=1C=NC=CC1C1=CC=C(C=C1)Cl</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_000174521">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001745"/>
+  <prop:AFX_0002717 rdf:resource="#afm_00010607"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialIdentifier__21</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InChI=1S/C11H9ClN2/c12-9-3-1-8(2-4-9)10-5-6-14-7-11(10)13/h1-7H,13H2</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#SynthesisRole__UNSPECIFIED">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000344"/>
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000100"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SynthesisRole__UNSPECIFIED</rdfs:label>
+  <has_value_bijective rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UNSPECIFIED</has_value_bijective>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00026211">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002621"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ReactionDuration__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afr_00015841">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001584"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Temperature__1</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#afp_00013481">
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0001348"/>
+  <prop:AFX_0002793 rdf:resource="#afp_00037111"/>
+  <prop:AFX_0002793 rdf:resource="#afp_00037431"/>
+  <prop:AFX_0002793 rdf:resource="#afp_00037432"/>
+  <prop:AFX_0002793 rdf:resource="#afp_00037433"/>
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003620"/>
+  <rdf:type rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003275"/>
+  <obo:RO_0002131 rdf:resource="#afp_00013481"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synthesis__1</rdfs:label>
+</owl:NamedIndividual>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/equipment#AFE_0000350">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0000354"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/equipment#AFE_0000466">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0001745"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/equipment#AFE_0000857"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000031">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000105"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000049">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000031"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000076">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000034"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000144">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000108"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0000154">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0000394"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0000386">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0000993"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0000394">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHMO_0000993"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0000401">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0000154"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0000403">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0000394"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0000404">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0000394"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0001028">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33253"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0001042">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0000386"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001034"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0001079">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001034"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0001083">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0001084">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001090"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/material#AFM_0001085">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001090"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0000307">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0000498">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0000801">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003475"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003598"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0001135">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003275"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0002680">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003275">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003313">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003321"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003312"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003321">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003330">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003362">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003486"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003469">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003275"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003312"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003533">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0000422"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003566">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003275"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003575">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003275"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003349"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003584">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003598">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0000307"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003712">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003711"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003716">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003475"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003726">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/OBI_0000011"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000024">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000207"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000068">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000754"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001060"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000504">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001602"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000523">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000207"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000754">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000207"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000936">
+  <rdfs:subClassOf rdf:resource="http://org.semanticweb.owlapi/error#Error1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000937">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000974">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000944"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000975">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001058"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000977">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000979"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001124">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001186">
+  <owl:equivalentClass rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001518"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001209">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/common#AFC_0000168"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001210">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/common#AFC_0000168"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001211"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001255">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001277">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001518">
+  <owl:equivalentClass rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001186"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001519">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001186"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001520">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001186"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001556">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001501"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001583">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001602">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000207"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001603">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000923"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001658">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001659">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001660">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001669">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001952">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001967">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001243"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002008">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002010">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002035">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002126">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001636"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002175">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001501"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002202">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001561"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002229">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001277"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002249">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000207"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002253">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001277"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002255">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000754"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002256">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000754"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002298">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002316">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002318">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002391">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001277"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002429">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002455">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002472">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002486"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002473">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002486"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002474">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002486"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002486">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0002485"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002495">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002496">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002502">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002534">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001277"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002562">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001636"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002563">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001636"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002596">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002646">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002649">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002650">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002731">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002745">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002746">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001505"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002762">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000008">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000010">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000160"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000017">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000166"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000018">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000027">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000026"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000030">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000167"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000058">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000004"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000066">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000064"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000957"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000068">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000064"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000957"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000069">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000982"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000064"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000071">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000064"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000957"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000079">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000064"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000957"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000095">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000448"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000100">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000161"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000154">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000043"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000160">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000161">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000166">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000441">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000095"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000087"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000499">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000543">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000553">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000552"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000085"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000560">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000023">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000091"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/IAO_0000178">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000011">
+  <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000094">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003620"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/OBI_0000835">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/material#AFM_0001090"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/property#AFX_0000690">
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value</owlr:python_name>
+</rdf:Description>
+
+<owl:Thing rdf:about="http://purl.allotrope.org/ontologies/afo"/>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000138">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000196"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000023">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000138"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000036">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000041"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000103">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000196"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000119">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000127">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000111"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003552">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0000307"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003599">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003370">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003737"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003371">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003737"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001816">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000922"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000449">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000119"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000505">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000296"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/common#AFC_0000091">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/common#AFC_0000166"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/common#AFC_0000092">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/common#AFC_0000166"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/common#AFC_0000093">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/common#AFC_0000166"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000211">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000136"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/function#AFFN_0000208">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/function#AFFN_0000076"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000035">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000100"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003325">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0000307"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003416">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003321"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003583">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003603">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003637">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/process#AFP_0003644">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/process#AFP_0003452"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000895">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0000898">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000941"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000148">
+  <owl:equivalentClass rdf:resource="http://www.w3.org/2006/time#Instant"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000248">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000314"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001554">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001636"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001555">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001636"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0002790">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000916"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000171">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000010"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000230">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000100"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000330">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0000982"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/quality#AFQ_0000116">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000005"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/quality#AFQ_0000210"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000366">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000365"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000427"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/role#AFRL_0000367">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000428"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/role#AFRL_0000365"/>
+</rdf:Description>
+
+<owl:Thing rdf:about="http://purl.obolibrary.org/obo/PATO_0000119"/>
+
+<owl:Thing rdf:about="http://code.google.com/p/bfo"/>
+
+<owl:Thing rdf:about="http://ifomis.org/bfo"/>
+
+<owl:Thing rdf:about="http://purl.obolibrary.org/obo/bfo-2-0"/>
+
+<owl:Thing rdf:about="mailto://bfo-owl-devel@googlegroups.com"/>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/property#AFX_0000834">
+  <rdfs:subPropertyOf rdf:resource="http://purl.allotrope.org/ontologies/property#AFX_0002802"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002508">
+  <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://purl.allotrope.org/ontologies/result#AFR_0001481">
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001484"/>
+  <rdfs:subClassOf rdf:resource="http://purl.allotrope.org/ontologies/result#AFR_0001082"/>
+</rdf:Description>
+
+
+</rdf:RDF>

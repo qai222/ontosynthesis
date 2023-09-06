@@ -14,12 +14,14 @@ def adapt_compound_identifier(compound_identifier: CompoundIdentifier) -> afo.Ma
     :return:
     """
     identifier = create_individual(afo.MaterialIdentifier)
-    identifier_class = create_individual(afo.Classification, label=compound_identifier.type.name)
-
-    create_relation(identifier_class, afo.classifies, identifier)
+    if compound_identifier.type.name == CompoundIdentifierType.SMILES:
+        identifier.is_a.append(afo.SmilesMolecularStructure)
+    elif compound_identifier.type.name == CompoundIdentifierType.INCHI:
+        identifier.is_a.append(afo.InchiMolecularStructure)
+    elif compound_identifier.type.name == CompoundIdentifierType.NAME:
+        identifier.is_a.append(afo.ChemicalName)
 
     create_relation_data(identifier, has_value_functional, compound_identifier.value)
-    create_relation_data(identifier_class, has_value_bijective, compound_identifier.type.name)
 
     return identifier
 
@@ -35,8 +37,8 @@ def adapt_amount(amount: Amount) -> afo.AmountOfSubstance:
     one_of_message: Mass | Volume | Moles
 
     amount = create_individual(afo.AmountOfSubstance, )
-    quantity_kind = create_individual(afo.QuantityKind, label=one_of_field)
-    unit = create_individual(afo.UnitOfMeasure, label=one_of_message.units.name)
+    quantity_kind = create_individual(afo.QuantityKind, label=one_of_field, label_as_name=True)
+    unit = create_individual(afo.UnitOfMeasure, label=one_of_message.units.name, label_as_name=True)
 
     create_relation(amount, afo.has_quantity_kind, quantity_kind)
     create_relation(amount, afo.has_unit, unit)
@@ -51,7 +53,7 @@ def adapt_amount(amount: Amount) -> afo.AmountOfSubstance:
 def adapt_compound(compound: Compound | ProductCompound) -> afo.PortionOfCompound:
     # TODO phase
 
-    portion_of_compound = create_individual(afo.PortionOfCompound, None)
+    portion_of_compound = create_individual(afo.PortionOfCompound)
 
     for ci in compound.identifiers:
         identifier = adapt_compound_identifier(ci)
@@ -59,11 +61,11 @@ def adapt_compound(compound: Compound | ProductCompound) -> afo.PortionOfCompoun
 
     if isinstance(compound, Compound):
         amount = adapt_amount(compound.amount)
-        amount_quality = create_individual(afo.AmountOfSubstance_quality, None)
+        amount_quality = create_individual(afo.AmountOfSubstance_quality)
         create_relation(portion_of_compound, afo.has_quality, amount_quality)
         create_relation(amount_quality, afo.quantified_by, amount)
 
-    role = create_individual(afo.SynthesisRole, label=ReactionRoleType(compound.reaction_role).name)
+    role = create_individual(afo.SynthesisRole, label=ReactionRoleType(compound.reaction_role).name, label_as_name=True)
     create_relation(portion_of_compound, afo.has_role, role)
     create_relation_data(role, has_value_bijective, ReactionRoleType(compound.reaction_role).name)
 
@@ -85,7 +87,7 @@ def adapt_reaction_input_or_output(rio: ReactionInput | ReactionOutcome) -> afo.
         compound = adapt_compound(cs[0])
         return compound
     else:
-        mixture = create_individual(afo.ChemicalMixture, None)
+        mixture = create_individual(afo.ChemicalMixture)
         for c in cs:
             compound = adapt_compound(c)
             create_relation(mixture, afo.has_ingredient, compound)
@@ -105,16 +107,16 @@ def adapt_reaction(reaction: Reaction):
 
     # reaction inputs
     reaction_inputs = sorted(list(reaction.inputs.values()), key=lambda x: x.addition_order)
-    total_material_input = create_individual(afo.ChemicalMixture, None)
+    total_material_input = create_individual(afo.ChemicalMixture)
     addition_processes = []
     for ri in reaction_inputs:
         mixture_input = adapt_reaction_input_or_output(ri)
         create_relation(total_material_input, afo.has_ingredient, mixture_input)
 
-        addition_process = create_individual(afo.Adding_material, None)
-        addition_device = create_individual(afo.TransferringDevice, None)
-        source_container = create_individual(afo.Container, None)
-        addition_duration = create_individual(afo.Duration, None)  # TODO add addition time
+        addition_process = create_individual(afo.Adding_material)
+        addition_device = create_individual(afo.TransferringDevice)
+        source_container = create_individual(afo.Container)
+        addition_duration = create_individual(afo.Duration)  # TODO add addition time
 
         create_relation(addition_process, afo.has_target_start_location, source_container)
         create_relation(addition_process, afo.has_duration, addition_duration)
@@ -129,10 +131,10 @@ def adapt_reaction(reaction: Reaction):
         create_relation(addition_processes[i], afo.precedes, addition_processes[i + 1])
 
     # actual reaction
-    actual_reaction_process = create_individual(afo.ChemicalReaction_molecular, None)
+    actual_reaction_process = create_individual(afo.ChemicalReaction_molecular)
     mixture_output = adapt_reaction_input_or_output(reaction.outcomes[-1])  # TODO only the last
-    duration = create_individual(afo.ReactionDuration, None)
-    temperature = create_individual(afo.Temperature, None)
+    duration = create_individual(afo.ReactionDuration)
+    temperature = create_individual(afo.Temperature)
     create_relation_data(duration, has_value_functional, reaction.outcomes[-1].reaction_time.value)  # TODO unit
     create_relation_data(temperature, has_value_functional, reaction.conditions.temperature.setpoint.value)  # TODO unit
     create_relation(actual_reaction_process, afo.has_description, duration)
@@ -142,7 +144,7 @@ def adapt_reaction(reaction: Reaction):
     create_relation(actual_reaction_process, afo.has_material_output, mixture_output)
     create_relation(addition_processes[-1], afo.precedes, actual_reaction_process)
 
-    synthesis_process = create_individual(afo.Synthesis, None)
+    synthesis_process = create_individual(afo.Synthesis)
     create_relation(synthesis_process, afo.has_proper_part, actual_reaction_process)
     for p in addition_processes:
         create_relation(synthesis_process, afo.has_proper_part, p)

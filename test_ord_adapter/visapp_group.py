@@ -3,7 +3,7 @@ import json
 import dash_bootstrap_components as dbc
 import dash_cytoscape as cyto
 import networkx as nx
-from dash import Dash, html, Input, Output, no_update, State
+from dash import Dash, html, Input, Output, State, Patch
 
 JsonTheme = {
     "scheme": "monokai",
@@ -27,12 +27,14 @@ JsonTheme = {
 }
 
 # load world
-with open("test_reaction_without_infer.json", "r") as f:
+with open("test_reaction_with_infer.json", "r") as f:
     DATA = json.load(f)
 
 CYTO_NODES = DATA['cyto_nodes']
 CYTO_EDGES = DATA['cyto_edges']
 CYTO_NODES_DICT = {n['data']['id']: n for n in CYTO_NODES}
+CYTO_EDGES_DICT = {n['data']['id']: n for n in CYTO_EDGES}
+ORD__REACTION_ID = DATA['ord__reaction_id']
 
 
 def get_cyto_edges_btw_uv(uid, vid):
@@ -43,15 +45,23 @@ NXG = nx.MultiDiGraph()
 for n in CYTO_EDGES:
     NXG.add_edge(n['data']['source'], n['data']['target'], n['data']['predicate_python_name'])
 
+# import urllib
+# with urllib.request.urlopen('https://js.cytoscape.org/demos/colajs-graph/cy-style.json') as url:
+#     STYLE_SHEET = json.loads(url.read().decode())
+
+
 STYLE_SHEET = [
     {
         'selector': 'edge',
         'style': {
-            'opacity': 1,
             'curve-style': 'unbundled-bezier',
             'taxi-direction': 'vertical',
             'label': 'data(predicate_python_name)',
-            'target-arrow-shape': 'triangle'
+            'target-arrow-shape': 'triangle',
+            "opacity": "0.5",
+            "line-color": "#bbb",
+            # "width": "mapData(weight, 0, 1, 1, 8)",
+            "overlay-padding": "3px"
         }
     },
 
@@ -63,37 +73,48 @@ STYLE_SHEET = [
             'target-arrow-color': 'data(edge_color)'
         }
     },
-
+    {
+        "selector": "core",
+        "style": {
+            "selection-box-color": "#AAD8FF",
+            "selection-box-border-color": "#8BB0D0",
+            "selection-box-opacity": "0.5"
+        }
+    },
     {
         'selector': 'node',
         'style': {
-            'content': 'data(label)',
+            'content': 'data(cyto_node_label)',
             'border-width': 2,
             'text-valign': 'center',
-            'padding': "10px",
-            'width': 'label',
-            'height': '18px',
-            'font-size': '18px'
+            'padding': "15px",
+            # 'width': 'label',
+            # 'height': '22px',
+            'font-size': '18px',
+            "text-halign": "center",
+            "background-color": "#555",
+            "text-outline-color": "#555",
+            "text-outline-width": "2px",
+            "color": "#fff",
+            "overlay-padding": "6px",
+            "z-index": "10"
         }
     },
 
-    # {
-    #     'selector': "." + ChemicalIdentifier.__name__,
-    #     'style': {
-    #         'shape': 'rectangle',
-    #         'background-color': 'white',
-    #         'text-background-color': 'blue',
-    #     }
-    # },
-    # {
-    #     'selector': "." + Action.__name__,
-    #     'style': {
-    #         'shape': 'rectangle',
-    #         # 'background-color': 'none',
-    #         'background-color': 'white',
-    #         'color': 'red',
-    #     }
-    # },
+    {
+        'selector': ".process",
+        'style': {
+            'shape': 'rectangle',
+            'background-color': 'white',
+        }
+    },
+    {
+        'selector': ".material",
+        'style': {
+            'shape': 'circle',
+            'background-color': 'white',
+        }
+    },
     {
         'selector': ':selected',
         'style': {
@@ -102,7 +123,16 @@ STYLE_SHEET = [
             'line-color': 'SteelBlue',
         }
     },
-
+    {
+        "selector": "node:selected",
+        "style": {
+            "border-width": "6px",
+            "border-color": "#AAD8FF",
+            "border-opacity": "0.5",
+            "background-color": "#77828C",
+            "text-outline-color": "#77828C"
+        }
+    },
 ]
 
 app = Dash(
@@ -112,47 +142,6 @@ app = Dash(
 )
 
 cyto.load_extra_layouts()
-
-
-# @app.callback(
-#     Output("INFO TAB", "children"),
-#     Input("CYTO", "selectedNodeData"),
-#     Input("CYTO", "selectedEdgeData"),
-# )
-# def update_div_info(node_data, edge_data):
-#     node_attrs = []
-#     edge_attrs = []
-#     if node_data:
-#         for d in node_data:
-#             node_attrs.append(d['ele_attrs'])
-#     if edge_data:
-#         for d in edge_data:
-#             u = d['source']
-#             v = d['target']
-#             attrs = {
-#                 "source": u,
-#                 "target": v,
-#                 "predicate": d['predicate'],
-#             }
-#             edge_attrs.append(attrs)
-#     blocks = []
-#     for attrs in node_attrs + edge_attrs:
-#         try:
-#             header = attrs['individual class']
-#         except KeyError:
-#             header = attrs['predicate']
-#         json_block = dash_renderjson.DashRenderjson(data=attrs, max_depth=-1,
-#                                                     theme=JsonTheme, invert_theme=True),
-#         block = dbc.Card(
-#             [
-#                 dbc.CardHeader([html.B(header, className="text-primary"), ]),
-#                 dbc.CardBody(json_block),
-#             ],
-#             className="mb-3"
-#         )
-#         blocks.append(block)
-#     return blocks
-#
 
 
 def get_individual_class_checklist():
@@ -201,7 +190,7 @@ def get_predicate_checklist():
                 labelClassName="btn btn-outline-primary mb-2",
                 labelCheckedClassName="active",
                 options=options,
-                value=[o['value'] for o in options if "has" in o['value']],
+                value=[o['value'] for o in options if "has" in o['value']] + ['preceded_by', 'quantified_by'],
             ),
         ],
         className="radio-group",
@@ -210,16 +199,40 @@ def get_predicate_checklist():
 
 
 @app.callback(
-    Output("CYTO_DIV", "children"),
+    Output('CYTO', 'stylesheet'),
+    Input('CYTO', 'selectedNodeData')
+)
+def update_stylesheet(node_data):
+    if node_data:
+        selected_node_ids = [nd['id'] for nd in node_data]
+        new_stylesheet = Patch()
+        for selected_node_id in selected_node_ids:
+            new_stylesheet.append({
+                'selector': f'edge[target="{selected_node_id}"]',
+                'style': {'line-color': 'red', 'color': 'red'}
+            })
+            new_stylesheet.append({
+                'selector': f'edge[source="{selected_node_id}"]',
+                'style': {'line-color': 'green', 'color': 'green'}
+            })
+        return new_stylesheet
+    else:
+        return STYLE_SHEET
+
+
+@app.callback(
+    Output('CYTO', 'elements'),
     Input("individual_class_checklist", "value"),
     Input("predicate_name_checklist", "value"),
+    State('CYTO', 'elements'),
 )
-def update_cyto(selected_individual_classes, selected_predicate_names, ):
+def generate_elements(
+        selected_individual_classes,
+        selected_predicate_names,
+        elements
+):
     allowed_nodes = []
     allowed_edges = []
-
-    if selected_individual_classes is None or selected_predicate_names is None:
-        return no_update
 
     for node in CYTO_NODES:
         if set(node['data']['individual_class_label']).intersection(set(selected_individual_classes)):
@@ -234,60 +247,9 @@ def update_cyto(selected_individual_classes, selected_predicate_names, ):
         allowed_edges.append(edge)
 
     nodes_in_edges = [e['data']['source'] for e in allowed_edges] + [e['data']['target'] for e in allowed_edges]
-    allowed_nodes = [n for n in allowed_nodes if n['data']['id'] in nodes_in_edges]
+    allowed_nodes = [n for n in allowed_nodes if n['data']['id'] in nodes_in_edges]  # remove orphans
 
-    cyto_main = cyto.Cytoscape(
-        id='CYTO',
-        layout={
-            'name': 'klay',
-            'nodeDimensionsIncludeLabels': True,
-            # 'animate': True,
-            # 'animationDuration': 1000,
-            'animate': False,
-            'align': 'UL',
-        },
-        style={
-            'width': '100%',
-            'height': 'calc(100vh - 100px)'
-        },
-        className="border-primary border",
-        elements=allowed_nodes + allowed_edges,
-        stylesheet=STYLE_SHEET,
-    )
-    return [
-        html.H5("ONTOSYNTHESIS"),
-        html.Hr(),
-        cyto_main
-    ]
-
-
-@app.callback(Output('CYTO', 'elements'),
-              [Input('CYTO', 'tapNodeData')],
-              [State('CYTO', 'elements'), ])
-def generate_elements(nodeData, elements):
-    if not nodeData:
-        return no_update
-
-    # If the node has already been expanded, we don't expand it again
-    if nodeData.get('expanded'):
-        return elements
-
-    # This retrieves the currently selected element, and tag it as expanded
-    for element in elements:
-        if nodeData['id'] == element.get('data').get('id'):
-            element['data']['expanded'] = True
-            break
-        this_node_id = nodeData['id']
-
-        neighbor_node_ids = NXG.neighbors(this_node_id)
-        extend_nodes = [CYTO_NODES_DICT[n] for n in neighbor_node_ids]
-        extend_edges = []
-        for nb in neighbor_node_ids:
-            extend_edges += get_cyto_edges_btw_uv(this_node_id, nb)
-        elements.extend(extend_nodes)
-        elements.extend(extend_edges)
-
-    return elements
+    return allowed_edges + allowed_nodes
 
 
 app.layout = html.Div(
@@ -296,7 +258,30 @@ app.layout = html.Div(
             [
                 html.Div(
                     id="CYTO_DIV",
-                    className="col-lg-8",
+                    children=
+                    [
+                        html.H5(f"ONTOSYNTHESIS: {ORD__REACTION_ID}"),
+                        html.Hr(),
+                        cyto.Cytoscape(
+                            id='CYTO',
+                            layout={
+                                'name': 'klay',
+                                'nodeDimensionsIncludeLabels': True,
+                                'animate': True,
+                                'animationDuration': 1000,
+                                'align': 'UL',
+                            },
+                            style={
+                                'width': '100%',
+                                'height': 'calc(100vh - 100px)'
+                            },
+                            className="border-primary border",
+                            elements=CYTO_EDGES + CYTO_NODES,
+                            stylesheet=STYLE_SHEET,
+                            responsive=True,
+                        )
+                    ],
+                    className="col-lg-8 px-4",
                     # style={'height': 'calc(100vh - 100px)'},  # minus header bar height
                     style={'height': '100%'},  # minus header bar height
                 ),
@@ -309,7 +294,7 @@ app.layout = html.Div(
                         get_predicate_checklist(),
                         html.Hr(),
                     ],
-                    className="col-lg-4",
+                    className="col-lg-4 px-2",
                 ),
             ]
         )
@@ -318,4 +303,4 @@ app.layout = html.Div(
 )
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)

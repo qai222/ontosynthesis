@@ -4,7 +4,7 @@ from typing import Type
 
 from owlready2 import Thing
 from owlready2 import ThingClass, DataProperty, ObjectProperty, get_ontology, InverseFunctionalProperty, \
-    FunctionalProperty
+    FunctionalProperty, Property
 
 from ontosynthesis.resource import afo
 
@@ -28,18 +28,21 @@ with ONTO:
         python_name = "has_value_bijective"
 
 
-def create_individual(cls: ThingClass, label: str | None = None):
+def create_individual(cls: ThingClass, label: str | None = None, label_as_name: bool = False):
     with ONTO:
-        ind = cls()
-        # TODO not very sure about this...
-        ind_suffix = ind.iri.split("#")[-1]
-        cls_suffix = cls.iri.split("#")[-1]
-        index = ind_suffix[len(cls_suffix):]
-        if label is None:
-            lab = f"{list(cls.label)[0]}__{index}"
+        cls_label = list(cls.label)[0]
+        if label is not None:
+            ind_lab = f"{cls_label}__{label}"
+            if label_as_name:
+                ind = cls(name=ind_lab)
         else:
-            lab = f"{list(cls.label)[0]}__{label}"
-        ind.label.append(lab)
+            ind = cls()
+            # TODO not very sure about this...
+            ind_suffix = ind.iri.split("#")[-1]
+            cls_suffix = cls.iri.split("#")[-1]
+            index = ind_suffix[len(cls_suffix):]
+            ind_lab = f"{cls_label}__{index}"
+        ind.label.append(ind_lab)
         return ind
 
         # # include label in iri
@@ -69,3 +72,11 @@ def create_relation_data(sub: Thing, pred: Type[DataProperty], obj: int | float 
             setattr(sub, pred.python_name, obj)
         else:
             getattr(sub, pred.python_name).append(obj)
+
+
+def get_property(sub: Thing, pred: Type[Property], indirect=False):
+    if indirect:
+        p = "INDIRECT_" + pred.python_name
+    else:
+        p = pred.python_name
+    return getattr(sub, p)
