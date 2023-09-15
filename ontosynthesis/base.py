@@ -29,6 +29,15 @@ with ONTO:
 
 
 def create_individual(cls: ThingClass, label: str | None = None, label_as_name: bool = False):
+    """
+    helper function to create a NamedIndividual in the master ontology
+
+    :param cls:
+    :param label:
+    :param label_as_name: if Ture, the name will be set to "<class_name>__<label>",
+    use this to avoid creating multiple individuals
+    :return:
+    """
     with ONTO:
         cls_label = list(cls.label)[0]
         if label is not None:
