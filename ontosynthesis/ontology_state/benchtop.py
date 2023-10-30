@@ -1,13 +1,14 @@
 from owlready2 import ObjectProperty, TransitiveProperty, AllDisjoint, Thing
 
-from ontosynthesis.ontologies.base import ONTO
+from ontosynthesis.ontology_state.base import ONTOLOGY_STATE
 
-with ONTO:
+with ONTOLOGY_STATE:
     class HardwareUnit(Thing):
         pass
 
 
     class held_by(ObjectProperty, TransitiveProperty):
+        python_name = "held_by"
         domain = [HardwareUnit]
         range = [HardwareUnit]
 

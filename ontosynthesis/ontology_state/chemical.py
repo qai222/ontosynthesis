@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from owlready2 import ObjectProperty, FunctionalProperty, Thing, AllDisjoint
 
-from ontosynthesis.ontologies.base import ONTO, has_part
-from ontosynthesis.ontologies.benchtop import HardwareUnit
-from ontosynthesis.ontologies.data_properties import has_value_json_string
+from ontosynthesis.ontology_state.base import ONTOLOGY_STATE, has_part
+from ontosynthesis.ontology_state.benchtop import HardwareUnit
+from ontosynthesis.ontology_state.data_properties import has_value_json_string
 
-with ONTO:
+with ONTOLOGY_STATE:
     class MaterialInformation(Thing):
         is_a = [has_value_json_string.exactly(1, str)]
 
@@ -32,16 +32,19 @@ with ONTO:
 
 
     class described_by(ObjectProperty):
+        python_name = "described_by"
         domain = [MaterialEntity]
         range = [MaterialInformation]
 
 
     class identified_by(ObjectProperty, FunctionalProperty):
+        python_name = "identified_by"
         domain = [MaterialEntity]
         range = [MaterialIdentifier]
 
 
     class quantified_by(ObjectProperty, FunctionalProperty):
+        python_name = "quantified_by"
         domain = [MaterialEntity]
         range = [MaterialAmount]
 
@@ -61,11 +64,13 @@ with ONTO:
         a subproperty of a transitive property can be non-transitive, this has been fixed in owlready2, see
         http://owlready.306.s1.nabble.com/subproperty-of-a-transitive-property-is-always-transitive-td3248.html
         """
+        python_name = "has_ingredient"
         range = [MaterialIdentifier]
 
 
     class contained_by(ObjectProperty):
         """ assuming all chemicals are contained """
+        python_name = "contained_by"
         domain = [MaterialPortion]
         range = [HardwareUnit]
 
