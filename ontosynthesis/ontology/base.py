@@ -10,22 +10,22 @@ with ONTOLOGY:
     define general properties here
     """
 
+
     class has_part(ObjectProperty, TransitiveProperty):
-        python_name = "has_part"
+        pass
 
 
     class has_value(DataProperty):
-        python_name = "has_value"
         range = [str, float, int, bool]
 
 
     class has_value_functional(has_value, FunctionalProperty):
-        python_name = "has_value_functional"
+        pass
 
 
     class has_value_inverse_functional(has_value, InverseFunctionalProperty):
-        python_name = "has_value_inverse_functional"
+        pass
 
 
     class has_value_bijective(has_value, InverseFunctionalProperty, FunctionalProperty):
-        python_name = "has_value_bijective"
+        pass

@@ -37,14 +37,12 @@ with ONTOLOGY:
         a subproperty of a transitive property can be non-transitive, this has been fixed in owlready2, see
         http://owlready.306.s1.nabble.com/subproperty-of-a-transitive-property-is-always-transitive-td3248.html
         """
-        python_name = "is_made_of"
         domain = [MaterialEntity]
         range = [MaterialEntity]
 
 
     class contained_by(ObjectProperty):
         """ assuming all chemicals are contained """
-        python_name = "contained_by"
         domain = [MaterialEntity]
         range = [HardwareUnit]
 

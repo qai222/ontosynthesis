@@ -7,12 +7,12 @@ with ONTOLOGY:
     define the bench top ontology here, it will be used to define the state of a workstation/platform
     """
 
+
     class HardwareUnit(Thing):
         pass
 
 
     class held_by(ObjectProperty, TransitiveProperty):
-        python_name = "held_by"
         domain = [HardwareUnit]
         range = [HardwareUnit]
 
@@ -23,9 +23,7 @@ with ONTOLOGY:
     #     range = [HardwareUnit]
     #     inverse_property = held_by
 
-
     class directly_held_by(held_by, FunctionalProperty):
-        python_name = "directly_held_by"
         domain = [HardwareUnit]
         range = [HardwareUnit]
 
@@ -35,7 +33,6 @@ with ONTOLOGY:
     #     domain = [HardwareUnit]
     #     range = [HardwareUnit]
     #     inverse_property = directly_held_by
-
 
     class Consumable(HardwareUnit):
         pass
