@@ -1,9 +1,19 @@
-from owlready2 import DataProperty, FunctionalProperty, InverseFunctionalProperty
+from __future__ import annotations
 
-from ontosynthesis.ontology_state.base import ONTOLOGY_STATE
+from owlready2 import (get_ontology, ObjectProperty, TransitiveProperty, DataProperty,
+                       FunctionalProperty, InverseFunctionalProperty)
 
-with ONTOLOGY_STATE:
-    # https://owlready2.readthedocs.io/en/v0.44/properties.html#data-property
+ONTOLOGY = get_ontology("http://ontosynthesis.org/ontology.owl")
+
+with ONTOLOGY:
+    """
+    define general properties here
+    """
+
+    class has_part(ObjectProperty, TransitiveProperty):
+        python_name = "has_part"
+
+
     class has_value(DataProperty):
         python_name = "has_value"
         range = [str, float, int, bool]
@@ -19,10 +29,3 @@ with ONTOLOGY_STATE:
 
     class has_value_bijective(has_value, InverseFunctionalProperty, FunctionalProperty):
         python_name = "has_value_bijective"
-
-
-    class has_value_json_string(has_value_functional):
-        python_name = "has_value_json_string"
-
-
-    range = [str]
