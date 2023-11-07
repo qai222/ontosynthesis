@@ -25,6 +25,9 @@ with ONTOLOGY:
         pass
 
 
+    AllDisjoint([SolidMaterial, LiquidMaterial])
+
+
     class chemically_quantified_by(DataProperty):
         domain = [MaterialEntity]
         range = [data_types.Compound]
@@ -47,8 +50,11 @@ with ONTOLOGY:
         range = [HardwareUnit]
 
 
-    # class contains(ObjectProperty):
-    #     python_name = "contains"
-    #     inverse_property = contained_by
+    class contains(ObjectProperty):
+        domain = [HardwareUnit]
+        range = [MaterialEntity]
+        inverse_property = contained_by
 
-    AllDisjoint([SolidMaterial, LiquidMaterial])
+
+    class ChemicalContainer(HardwareUnit):
+        equivalent_to = [HardwareUnit & contains.min(1, MaterialEntity)]
