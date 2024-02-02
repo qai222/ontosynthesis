@@ -12,6 +12,17 @@ with ONTOLOGY:
         pass
 
 
+    class Consumable(HardwareUnit):
+        pass
+
+
+    class Device(HardwareUnit):
+        pass
+
+
+    AllDisjoint([Consumable, Device])
+
+
     class held_by(ObjectProperty, TransitiveProperty):
         domain = [HardwareUnit]
         range = [HardwareUnit]
@@ -33,17 +44,5 @@ with ONTOLOGY:
         range = [HardwareUnit]
         inverse_property = directly_held_by
 
-
-    class UnitHolder(HardwareUnit):
-        equivalent_to = [HardwareUnit & directly_holds.min(1, HardwareUnit)]
-
-
-    class Consumable(HardwareUnit):
-        pass
-
-
-    class Device(HardwareUnit):
-        pass
-
-
-    AllDisjoint([Consumable, Device])
+    # class UnitHolder(Device):
+    #     equivalent_to = [Device & ]

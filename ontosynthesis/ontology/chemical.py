@@ -33,6 +33,11 @@ with ONTOLOGY:
         range = [data_types.Compound]
 
 
+    class is_chemically_mergeable(ObjectProperty):
+        domain = [MaterialEntity]
+        range = [MaterialEntity]
+
+
     class is_made_of(has_part):
         """
         A is_made_of B means A is made by **directly** mixing B with at least one other material entity

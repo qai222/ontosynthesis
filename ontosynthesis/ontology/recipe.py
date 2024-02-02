@@ -13,6 +13,25 @@ with ONTOLOGY:
     """
 
 
+    class MaterialTransform(Thing):
+        pass
+
+
+    class has_material_input(ObjectProperty):
+        domain = [MaterialTransform]
+        range = [MaterialEntity]
+
+
+    class has_material_output(ObjectProperty):
+        domain = [MaterialTransform]
+        range = [MaterialEntity]
+
+
+    class is_preceded_by(ObjectProperty):
+        domain = [MaterialTransform]
+        range = [MaterialTransform]
+
+
     class Operation(Thing):
         pass
 
