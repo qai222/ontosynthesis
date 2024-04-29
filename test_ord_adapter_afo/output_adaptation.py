@@ -3,7 +3,7 @@ from __future__ import annotations
 from owlready2 import sync_reasoner_hermit
 
 from ontosynthesis.base import ONTO
-from ontosynthesis.ord_adapter import adapt_reaction, Reaction
+from ontosynthesis.ord_adapter_afo import adapt_reaction, Reaction
 
 with open("../test_reaction/test_reaction.json", "r") as f:
     test_reaction = Reaction().from_json(f.read())

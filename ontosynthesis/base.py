@@ -6,14 +6,19 @@ from owlready2 import Thing
 from owlready2 import ThingClass, DataProperty, ObjectProperty, get_ontology, InverseFunctionalProperty, \
     FunctionalProperty, Property
 
-from ontosynthesis.resource import afo
-
 ONTO = get_ontology("http://ontosynthesis.org/ontosynthesis.owl")
-ONTO.imported_ontologies.append(afo.onto)
+
+# from ontosynthesis.resource import afo
+# ONTO.imported_ontologies.append(afo.onto)
+# # Note: you need afo.owx to use this, see `ontologies/afo/afo.md`
+
+from ontosynthesis.resource import soo
+
+ONTO.imported_ontologies.append(soo.onto)
 
 with ONTO:
-    has_value = ONTO.search_one(iri="http://purl.allotrope.org/ontologies/property#AFX_0000690")
-    has_value.python_name = "has_value"
+    class has_value(DataProperty):
+        python_name = 'has_value'
 
 
     class has_value_functional(has_value, FunctionalProperty):

@@ -1,3 +1,7 @@
 dash
 owlready2
 pandas
+dash
+dash_cytoscape
+dash_bootstrap_components
+networkx

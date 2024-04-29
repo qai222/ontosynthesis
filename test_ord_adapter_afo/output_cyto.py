@@ -5,7 +5,8 @@ import os.path
 from owlready2 import Thing, ObjectProperty, DataProperty, AnnotationProperty, Ontology
 from owlready2 import get_ontology, onto_path
 
-from ontosynthesis.base import get_property, afo
+from ontosynthesis.base import get_property
+from ontosynthesis.resource import afo
 
 """
 error in loading may come from invalid import path

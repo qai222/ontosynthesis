@@ -5,6 +5,7 @@ from ontosynthesis.base import create_relation, create_individual, create_relati
 from ontosynthesis.resource import afo
 from ontosynthesis.resource.ord_betterproto import *
 
+# # Note: you need afo.owx to use this, see `ontologies/afo/afo.md`
 
 def adapt_compound_identifier(compound_identifier: CompoundIdentifier) -> afo.MaterialIdentifier:
     """
