@@ -1,0 +1,2359 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns="http://www.ontosynthesis.org/SOO#"
+         xmlns:x_1.1="http://purl.org/dc/elements/1.1/"
+         xmlns:core="http://www.w3.org/2004/02/skos/core#"
+         xmlns:owlr="http://www.lesfleursdunormal.fr/static/_downloads/owlready_ontology.owl#">
+
+<owl:Ontology rdf:about="http://www.ontosynthesis.org/SOO">
+  <x_1.1:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qianxiang Ai</x_1.1:creator>
+  <x_1.1:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cullen Klein</x_1.1:creator>
+  <x_1.1:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://creativecommons.org/licenses/by/4.0/</x_1.1:license>
+  <x_1.1:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synthesis Operation Ontology (SOO)</x_1.1:title>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SOO (Synthesis Operation Ontology) is a domain ontology for common operations in organic synthesis.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synthesis Operation Ontology (SOO) is a domain ontology developed for common operations used in organic synthesis. The applications of this ontology include
+1. To accurately represent synthesis procedures;
+2. To identify differences between syntheses performed on different hardware platforms;
+3. To facilitate interoperation, such as performing the same synthesis procedure on different hardware platforms;
+4. To help troubleshooting procedures by reasoning over operation effects.</core:note>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000000">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#SOO_0000124"/>
+  <rdfs:range rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">is dependent on</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_dependent_on</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000003">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000016"/>
+  <rdfs:label xml:lang="en">has first step</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_first_step</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000016">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000015"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:label xml:lang="en">has proper part</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_proper_part</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000004">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000016"/>
+  <rdfs:label xml:lang="en">has second step</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_second_step</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000005">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000016"/>
+  <rdfs:label xml:lang="en">has third step</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_third_step</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000006">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:domain rdf:resource="#SOO_0000032"/>
+  <rdfs:range rdf:resource="#SOO_0000078"/>
+  <rdfs:label xml:lang="en">has separation input</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_separation_input</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000024">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000023"/>
+  <rdfs:domain rdf:resource="#SOO_0000000"/>
+  <rdfs:range rdf:resource="#SOO_0000078"/>
+  <rdfs:label xml:lang="en">has material input</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_material_input</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000007">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000026"/>
+  <rdfs:label xml:lang="en">has separation output</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_separation_output</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000026">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000025"/>
+  <rdfs:label xml:lang="en">has material output</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_material_output</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000000008">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000015"/>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000011"/>
+        <rdf:Description rdf:about="#SOO_0000091"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+  <rdfs:label xml:lang="en">operates on</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">operates_on</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000015">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:label xml:lang="en">has part</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_part</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000023">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label xml:lang="en">has input</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_input</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000025">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label xml:lang="en">has output</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_output</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000027">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label xml:lang="en">is contained by</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_contained_by</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000029">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#SOO_0000000"/>
+  <rdfs:range rdf:resource="#SOO_0000014"/>
+  <rdfs:label xml:lang="en">is environed by</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_environed_by</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000095">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000000"/>
+        <rdf:Description rdf:about="#SOO_0000180"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000000"/>
+        <rdf:Description rdf:about="#SOO_0000180"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+  <rdfs:label xml:lang="en">is preceded by</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_preceded_by</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000101">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label xml:lang="en">has start location</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_start_location</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000102">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:label xml:lang="en">has end location</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_end_location</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000115">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:range rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">is realized by</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_realized_by</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000128">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#SOO_0000120"/>
+  <rdfs:label xml:lang="en">describes</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">describes</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000133">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has pH adjusting material</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_pH_adjusting_material</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000135">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000095"/>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000000"/>
+        <rdf:Description rdf:about="#SOO_0000180"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000000"/>
+        <rdf:Description rdf:about="#SOO_0000180"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+  <rdfs:label xml:lang="en">is immediately preceded by</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is_immediately_preceded_by</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000280">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has washing solvent</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_washing_solvent</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000281">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has mobile phase</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_mobile_phase</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000282">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has extracting solvent</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_extracting_solvent</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000283">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has sparging gas</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_sparging_gas</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000287">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has crystallizing anti-solvent</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_crystallizing_anti_solvent</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000288">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has precipitation salt</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_precipitation_salt</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000289">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has recrystallizing solvent</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_recrystallizing_solvent</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#SOO_0000292">
+  <rdfs:subPropertyOf rdf:resource="#SOO_0000024"/>
+  <rdfs:label xml:lang="en">has dispersive solvent</rdfs:label>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_dispersive_solvent</owlr:python_name>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value">
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value_functional">
+  <rdfs:subPropertyOf rdf:resource="#has_value"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value_functional</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value_inverse_functional">
+  <rdfs:subPropertyOf rdf:resource="#has_value"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value_inverse_functional</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#has_value_bijective">
+  <rdfs:subPropertyOf rdf:resource="#has_value"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <owlr:python_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has_value_bijective</owlr:python_name>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
+
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+
+<owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+
+<owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+
+<owl:Class rdf:about="#SOO_0000124">
+  <rdfs:subClassOf rdf:resource="#SOO_0000014"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000000"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000091"/>
+            <rdf:Description rdf:about="#SOO_0000304"/>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">module environment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A module environment is the environment encompassed by a functional module. It is usually dependent on this functional module.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000091">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000015"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000011"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">functional module</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A functional module is a set of hardware units that, as a whole, can realize some process.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FunctionalModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000032">
+  <rdfs:subClassOf rdf:resource="#SOO_0000030"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000007"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000078"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000026"/>
+      <owl:onClass rdf:resource="#SOO_0000078"/>
+      <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000006"/>
+      <owl:onClass rdf:resource="#SOO_0000078"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">separating</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical process with the intention to divide a portion of material into two or more portions of material whose physical or chemical qualities are different from each other.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Separating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000078">
+  <rdfs:label xml:lang="en">portion of material</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0000993</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A thing that is spatially extended whose identity is independent of that of other entities and whose chemical composition can be reasonably estimated.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000011">
+  <rdfs:label xml:lang="en">hardware unit</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/equipment#AFE_0000354</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical thing that is designed to perform a function, as a whole or as a component, primarily by means of its mechanical or electrical nature.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HardwareUnit</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000000">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000024"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000078"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000026"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000078"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000029"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000014"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">material process</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material process is a process that invloves 
+1. any change of the physical and/or chemical qualities, including location, of any materials;
+2. creation, destroy, or transformation of any materials.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialProcess</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000014">
+  <rdfs:label xml:lang="en">environment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An environment is a spatial region within which some assumptions are made about the material processes that happen inside this region.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Environment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000180">
+  <rdfs:label xml:lang="en">operation</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An operation is a process actively initiated by an agent.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Operation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000120">
+  <rdfs:label xml:lang="en">information entity</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/IAO_0000030</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A generically dependent continuant that is about some thing.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InformationEntity</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000000001">
+  <rdfs:subClassOf rdf:resource="#SOO_0000315"/>
+  <rdfs:label xml:lang="en">syringe plunger</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/equipment#AFE_0000746</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The plunger of a syringe. Sometimes it cannot be detached from the syringe tube.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SyringePlunger</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000315">
+  <rdfs:subClassOf rdf:resource="#SOO_0000303"/>
+  <rdfs:label xml:lang="en">material transporting component</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material holder that is a component of a hardware unit whose primary function is to transport some portions of material.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialTransportingComponent</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000030">
+  <rdfs:subClassOf rdf:resource="#SOO_0000000"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">when should we explicitly define an auxiliary material input?
+If it will be in contact with our main inputs/outputs
+e.g. the mobile phase of chromatography should be defined as 'has mobile phase'
+counter e.g. the water running through a condenser</rdfs:comment>
+  <rdfs:label xml:lang="en">physical process</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material process in or after which no chemical species are created or destroyed.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhysicalProcess</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000031">
+  <rdfs:subClassOf rdf:resource="#SOO_0000000"/>
+  <rdfs:label xml:lang="en">chemical process</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material process in or after which one or more chemical species are created or destroyed.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chemical process often concurs with a physical process. E.g. A reaction that requires temperature change.</core:note>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any interface electron transfer is a chemical transformation.</core:note>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Example 1: A HCl aqueous solution is being mixed with a NaOH solution;
+Example 2: Ball-milling;
+Example 3: Accumulation of static charges on a surface;
+Example 4: Electrolysis of AgCl aqueous solution.
+
+Counter example 1: Current passing through a copper wire.</core:note>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChemicalProcess</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000033">
+  <rdfs:subClassOf rdf:resource="#SOO_0000032"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">todo 
+
+mixture sublimating
+	fractional sublimating
+	vacuum sublimating
+	freeze drying</rdfs:comment>
+  <rdfs:label xml:lang="en">separating by volatility difference</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A separating process based on the volatility difference among individual components.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeparatingByVolatilityDifference</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000034">
+  <rdfs:subClassOf rdf:resource="#SOO_0000033"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000024"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000089"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">mixture evaporating</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0001574</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The physical process by which a liquid substance is converted to a gas or vapour. This may occur at or below the normal boiling point of the liquid (the temperature at which a liquid boils at 1 atmosphere pressure) and the process is endothermic.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MixtureEvaporating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000089">
+  <rdfs:subClassOf rdf:resource="#SOO_0000086"/>
+  <rdfs:label xml:lang="en">liquid material</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material of liquid phase.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LiquidMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000039">
+  <rdfs:subClassOf rdf:resource="#SOO_0000033"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000091"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#SOO_0000015"/>
+              <owl:someValuesFrom rdf:resource="#SOO_0000215"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000006"/>
+      <owl:onClass rdf:resource="#SOO_0000089"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">distillating</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0001532</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A method of separating mixtures based on differences in their volatilities in a boiling liquid mixture. The components in a sample mixture are vaporised by the application of heat and then cooled by the action of cold water in a condenser.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000215">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">heating module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HeatingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000040">
+  <rdfs:subClassOf rdf:resource="#SOO_0000032"/>
+  <rdfs:label xml:lang="en">separating by grain size</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A separating process based on the grain size difference among individual components. This process implies the separating input is already microscopically separated.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeparatingByGrainSize</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000041">
+  <rdfs:subClassOf rdf:resource="#SOO_0000040"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000127"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">filtering</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/function#AFFN_0000049</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A separating process by preventing the flow of certain entities based on a quality or qualities of the entity while allowing entities which have different qualities to pass through.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Filtering</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000127">
+  <rdfs:subClassOf rdf:resource="#SOO_0000279"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000016"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000134"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">filtration module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FiltrationModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000042">
+  <rdfs:subClassOf rdf:resource="#SOO_0000032"/>
+  <rdfs:label xml:lang="en">separating by solubility difference</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A separating process based on the solubility difference among individual components.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeparatingBySolubilityDifference</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000043">
+  <rdfs:subClassOf rdf:resource="#SOO_0000042"/>
+  <rdfs:label xml:lang="en">precipitating</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0001688</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The sedimentation of a solid material (a 'precipitate') from a liquid solution in which the material is present in amounts greater than its solubility in the liquid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Precipitating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000044">
+  <rdfs:subClassOf rdf:resource="#SOO_0000043"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">crystallizing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A precipitating process where the precipitates are of crystalline phase.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crystallizing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000045">
+  <rdfs:subClassOf rdf:resource="#SOO_0000044"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000287"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000089"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">anti-solvent crystallizing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A crystallizing process induced by combining the separation input with an anti-solvent which decreases the solubility of the desired component in the separation input.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anti_solventCrystallizing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000046">
+  <rdfs:subClassOf rdf:resource="#SOO_0000043"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000288"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000086"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">salting out</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A precipitating process induced by combining the separation input with a portion of material, often a salt, that increaes the ionic strength of the separation input, which reduces the solubility of the desired component.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SaltingOut</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000086">
+  <rdfs:subClassOf rdf:resource="#SOO_0000078"/>
+  <owl:disjointWith rdf:resource="#SOO_0000090"/>
+  <rdfs:label xml:lang="en">uniphase material</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A uniphase material is a portion of material that exists in a single phase.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note the "phase" here is equivalent to the state of matter that can only be one of solid, liquid, gas, and plasma.
+
+Example 1: A mixture of ice and water is a multiphase material. 
+
+Example 2: A solid mixture of magnetite and hematite crystals is a uniphase material.</core:note>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniphaseMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000047">
+  <rdfs:subClassOf rdf:resource="#SOO_0000042"/>
+  <rdfs:label xml:lang="en">degassing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solubility difference-based separating process with the intention to remove some gaseous components previously dissolved in the separation input.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Degassing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000048">
+  <rdfs:subClassOf rdf:resource="#SOO_0000042"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000280"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000089"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">washing material</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/OBI_0302888</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Washing is a process by which a material entity acting as contaminant (e.g. excess staining reagent) is removed by application of one or more cycles of solution in flow.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WashingMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000049">
+  <rdfs:subClassOf rdf:resource="#SOO_0000044"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000289"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000089"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">recrystallizing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A crystallizing process starting by dissolving the solid state separation input in a solvent at an elevated temperature followed by crystallizing the desired component by gradually cooling.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recrystallizing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000050">
+  <rdfs:subClassOf rdf:resource="#SOO_0000042"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000282"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000089"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">liquid-liquid extracting</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0001600</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The process of transferring a dissolved substance from one liquid phase to another (immiscible or partially miscible) liquid phase in contact with it.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liquid_liquidExtracting</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000052">
+  <rdfs:subClassOf rdf:resource="#SOO_0000032"/>
+  <rdfs:label xml:lang="en">separating by affinity difference</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A separating process based on the interaction strength between individual components and an auxiliary material.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeparatingByAffinityDifference</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000053">
+  <rdfs:subClassOf rdf:resource="#SOO_0000032"/>
+  <rdfs:label xml:lang="en">separating by mass difference</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A separating process based on the density difference among individual components.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeparatingByMassDifference</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000054">
+  <rdfs:subClassOf rdf:resource="#SOO_0000104"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000091"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#SOO_0000015"/>
+              <owl:someValuesFrom rdf:resource="#SOO_0000092"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:disjointWith rdf:resource="#SOO_0000105"/>
+  <rdfs:label xml:lang="en">controlling material quality</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Controlling the quality of some material during the process. This requires some controller.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000104">
+  <rdfs:subClassOf rdf:resource="#SOO_0000030"/>
+  <rdfs:label xml:lang="en">changing material quality</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the quality of some material is changed.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangingMaterialQuality</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000092">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">process controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProcessController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000105">
+  <rdfs:subClassOf rdf:resource="#SOO_0000104"/>
+  <rdfs:label xml:lang="en">changing material quality without control</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Changing the quality of some material without controlling.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangingMaterialQualityWithoutControl</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000055">
+  <rdfs:subClassOf rdf:resource="#SOO_0000054"/>
+  <rdfs:label xml:lang="en">controlling temperature</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Controlling the temperature of some material during the process.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ControllingTemperature</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000056">
+  <rdfs:subClassOf rdf:resource="#SOO_0000054"/>
+  <rdfs:label xml:lang="en">controlling volume</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Controlling the volume of some material during the process.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ControllingVolume</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000057">
+  <rdfs:subClassOf rdf:resource="#SOO_0000054"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000133"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000078"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternatively, this can be defined as a composite material process that has a proper part of combining pH adjusting material and the material whose pH is being controlled.</rdfs:comment>
+  <rdfs:label xml:lang="en">controlling pH</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Controlling the pH of some material during the process. This requires adding some pH controlling agent.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ControllingPh</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000058">
+  <rdfs:subClassOf rdf:resource="#SOO_0000030"/>
+  <rdfs:label xml:lang="en">transporting</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A physical process with the intention to change the location of some portion of material.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Transporting</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000059">
+  <rdfs:subClassOf rdf:resource="#SOO_0000030"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1. This process can also increase the interfacial contact among different phases (e.g., solid-liquid, liquid-liquid, gas-liquid).
+2. This process is usually intentionally induced by agitating, but can also be a "side process" of, e.g., bulk transfer.</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This process often assumes the existence of at least one container that defines the physical boundaries of this process.</rdfs:comment>
+  <rdfs:label xml:lang="en">mixing</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/process#AFP_0001135</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which both the distribution of chemical composition and the distribution of thermal energy, often within a container, become more even.
+
+Example 1: The spontaneous expansion of a gas sample after being injected to a vacuum chamber.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mixing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000060">
+  <rdfs:subClassOf rdf:resource="#SOO_0000059"/>
+  <rdfs:label xml:lang="en">dissolving</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/process#AFP_0000112</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mixing step where a soluble component is mixed with a liquid component.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dissolving</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000061">
+  <rdfs:subClassOf rdf:resource="#SOO_0000059"/>
+  <rdfs:label xml:lang="en">homogenizing</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/process#AFP_0001649</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The intensive mixing of mutually insoluble phases (sometimes with addition of surfactants) to obtain a soluble suspension or emulsion.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Homogenizing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000062">
+  <rdfs:subClassOf rdf:resource="#SOO_0000030"/>
+  <rdfs:label xml:lang="en">phase transitioning</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhaseTransitioning</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000063">
+  <rdfs:subClassOf rdf:resource="#SOO_0000062"/>
+  <rdfs:label xml:lang="en">evaporating</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed from liquid to gas.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Evaporating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000064">
+  <rdfs:subClassOf rdf:resource="#SOO_0000062"/>
+  <rdfs:label xml:lang="en">sublimating</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed from solid to gas.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sublimating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000065">
+  <rdfs:subClassOf rdf:resource="#SOO_0000062"/>
+  <rdfs:label xml:lang="en">melting</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed from solid to liquid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Melting</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000066">
+  <rdfs:subClassOf rdf:resource="#SOO_0000062"/>
+  <rdfs:label xml:lang="en">freezing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed from liquid to solid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freezing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000067">
+  <rdfs:subClassOf rdf:resource="#SOO_0000062"/>
+  <rdfs:label xml:lang="en">condensing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed from gas to liquid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Condensing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000068">
+  <rdfs:subClassOf rdf:resource="#SOO_0000062"/>
+  <rdfs:label xml:lang="en">depositing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process during or after which the state of matter of some material is changed from gas to solid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Depositing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000079">
+  <rdfs:subClassOf rdf:resource="#SOO_0000078"/>
+  <rdfs:label xml:lang="en">portion of mixed material</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A portion of material resulted from combining compositionally different portions of material.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PortionOfMixedMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000080">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000079"/>
+        <rdf:Description rdf:about="#SOO_0000090"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <owl:disjointWith rdf:resource="#SOO_0000084"/>
+  <rdfs:label xml:lang="en">heterogeneous mixture</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A portion of mixed material that is not a homogeneous mixture.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000090">
+  <rdfs:subClassOf rdf:resource="#SOO_0000078"/>
+  <rdfs:label xml:lang="en">multiphase material</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A multiphase material is a portion of material that exists in more than one phase.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note the "phase" here is equivalent to the state of matter that can only be one of solid, liquid, gas, and plasma.
+
+Example 1: A mixture of ice and water is a multiphase material. 
+
+Example 2: A solid mixture of magnetite and hematite crystals is a uniphase material.</core:note>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MultiphaseMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000084">
+  <rdfs:subClassOf rdf:resource="#SOO_0000079"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000086"/>
+  <rdfs:label xml:lang="en">homogeneous mixture</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A homogeneous mixture is a potion of mixed material whose intensive property does not vary throughout the space it occupies.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note this definition is not limited to compositionally homogeneous.
+
+Example 1: A mixture of water and ice is not a homogeneous mixture. 
+
+Example 2: A mixture of diamond and graphite is not a homogeneous mixture.</core:note>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HomogeneousMixture</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000081">
+  <rdfs:subClassOf rdf:resource="#SOO_0000080"/>
+  <owl:disjointWith rdf:resource="#SOO_0000083"/>
+  <rdfs:label xml:lang="en">suspension</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/material#AFM_0000442</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A suspension is a heterogeneous mixture in which the solute particles do not dissolve but get suspended throughout the bulk of the medium. [Wikipedia]</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Suspension</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000083">
+  <rdfs:subClassOf rdf:resource="#SOO_0000080"/>
+  <rdfs:label xml:lang="en">dispersion</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/material#AFM_0001079</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A dispersions is a heterogeneous mixture that is comprising more than one phase where at least one of the phases consists of finely divided phase domains, often in the colloidal size range, dispersed throughout a continuous phase. [IUPAC]</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dispersion</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000082">
+  <rdfs:subClassOf rdf:resource="#SOO_0000081"/>
+  <rdfs:label xml:lang="en">spray</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/material#AFM_0000494</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A spray is a heterogeneous mixture where a small amount of liquid is dispersed into a gas. [Allotrope]</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spray</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000085">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000084"/>
+        <rdf:Description rdf:about="#SOO_0000089"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:label xml:lang="en">liquid solution</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A homogeneous mixture of liquid phase that can be made by mixing one or more solvents and one or more solutes.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000087">
+  <rdfs:subClassOf rdf:resource="#SOO_0000086"/>
+  <rdfs:label xml:lang="en">solid material</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material of solid phase.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SolidMaterial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000093">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000000"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#SOO_0000016"/>
+          <owl:someValuesFrom rdf:resource="#SOO_0000000"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:label xml:lang="en">composite material process</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A composite material process is a material process that can be described as the combination of more than one material process.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000096">
+  <rdfs:subClassOf rdf:resource="#SOO_0000092"/>
+  <rdfs:label xml:lang="en">feedback controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FeedbackController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000097">
+  <rdfs:subClassOf rdf:resource="#SOO_0000092"/>
+  <rdfs:label xml:lang="en">feedforward controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FeedforwardController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000099">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">material transporter module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialTransporterModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000106">
+  <rdfs:subClassOf rdf:resource="#SOO_0000105"/>
+  <rdfs:label xml:lang="en">changing temperature without control</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Changing the temperature of some material without controlling.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChangingTemperatureWithoutControl</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000107">
+  <rdfs:subClassOf rdf:resource="#SOO_0000092"/>
+  <rdfs:label xml:lang="en">pH controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000108">
+  <rdfs:subClassOf rdf:resource="#SOO_0000092"/>
+  <rdfs:label xml:lang="en">temperature controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TemperatureController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000109">
+  <rdfs:subClassOf rdf:resource="#SOO_0000092"/>
+  <rdfs:label xml:lang="en">process endpoint controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ProcessEndpointController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000114">
+  <rdfs:subClassOf rdf:resource="#SOO_0000096"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000109"/>
+  <rdfs:label xml:lang="en">aliquoting controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AliquotingController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000116">
+  <rdfs:subClassOf rdf:resource="#SOO_0000092"/>
+  <rdfs:label xml:lang="en">material quantity controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialQuantityController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000117">
+  <rdfs:subClassOf rdf:resource="#SOO_0000116"/>
+  <rdfs:label xml:lang="en">material volume controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialVolumeController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000118">
+  <rdfs:subClassOf rdf:resource="#SOO_0000116"/>
+  <rdfs:label xml:lang="en">material mass controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialMassController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000119">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000099"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#SOO_0000016"/>
+          <owl:someValuesFrom rdf:resource="#SOO_0000092"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:label xml:lang="en">controlled material transporter module</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000121">
+  <rdfs:subClassOf rdf:resource="#SOO_0000120"/>
+  <rdfs:label xml:lang="en">instrument calibration</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An information entity that describes the calibration of a hardware unit.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">InstrumentCalibration</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000122">
+  <rdfs:subClassOf rdf:resource="#SOO_0000120"/>
+  <rdfs:label xml:lang="en">reaction procedure</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An information entity that describes the procedure of a chemical reaction.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ReactionProcedure</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000123">
+  <rdfs:subClassOf rdf:resource="#SOO_0000014"/>
+  <rdfs:label xml:lang="en">lab environment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lab environment is the spatially smallest environment encompassing all material processes that are of interest. A lab environment is often described by a list of parameters e.g., temperature, humidity, which assumes some default material processes would happen in this environment.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LabEnvironment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000304">
+  <rdfs:subClassOf rdf:resource="#SOO_0000303"/>
+  <rdfs:label xml:lang="en">material container</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A material holder desgined to contain some portions of material.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialContainer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000125">
+  <rdfs:subClassOf rdf:resource="#SOO_0000124"/>
+  <rdfs:label xml:lang="en">reflux environment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A reflux environment is the environment that assumes a reflux process by which volatile material components that would otherwise escape from the module are condensed and reintroduced into the module.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RefluxEnvironment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000126">
+  <rdfs:subClassOf rdf:resource="#SOO_0000124"/>
+  <rdfs:label xml:lang="en">container environment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A container environment is the environment that depends on a container.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ContainerEnvironment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000279">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">separating module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SeparatingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000134">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">filter</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware unit that selectively allows passing portions of material through it.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Filter</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000129">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000078"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#SOO_0000027"/>
+          <owl:someValuesFrom rdf:resource="#SOO_0000304"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:label xml:lang="en">contained material</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A portion of material that is spatially refined by a hardware unit.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Example 1: Water in a jar.
+
+Example 2: Aceton held in a pipette.</core:note>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000130">
+  <rdfs:subClassOf rdf:resource="#SOO_0000099"/>
+  <rdfs:label xml:lang="en">solid transporter module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SolidTransporterModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000131">
+  <rdfs:subClassOf rdf:resource="#SOO_0000099"/>
+  <rdfs:label xml:lang="en">liquid transporter module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LiquidTransporterModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000137">
+  <rdfs:subClassOf rdf:resource="#SOO_0000139"/>
+  <rdfs:label xml:lang="en">combining materials to quench reaction</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A combining materials process with the purpose to quench an ongoing reaction.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CombiningMaterialsToQuenchReaction</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000139">
+  <rdfs:subClassOf rdf:resource="#SOO_0000093"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000003"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000058"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000003"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000059"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">combining materials</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A combining materials process is to combining more than one portions of materials in a container.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CombiningMaterials</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000138">
+  <rdfs:subClassOf rdf:resource="#SOO_0000106"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000188"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">quench cooling</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quench a reaction by applying cooling without controlling the temperature. E.g., applying ice bath.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">QuenchCooling</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000188">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">cooling module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CoolingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000140">
+  <rdfs:subClassOf rdf:resource="#SOO_0000059"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000141"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">mixing with agitation</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mixing process induced by an agitator module.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MixingWithAgitation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000141">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">agitator module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AgitatorModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000142">
+  <rdfs:subClassOf rdf:resource="#SOO_0000210"/>
+  <rdfs:label xml:lang="en">magnetic stirrer module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MagneticStirrerModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000210">
+  <rdfs:subClassOf rdf:resource="#SOO_0000141"/>
+  <rdfs:label xml:lang="en">stirrer module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StirrerModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000143">
+  <rdfs:subClassOf rdf:resource="#SOO_0000058"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000131"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000024"/>
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000089"/>
+            <rdf:Description rdf:about="#SOO_0000129"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000026"/>
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000089"/>
+            <rdf:Description rdf:about="#SOO_0000129"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">liquid transporting</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transporting process that transports some liquid.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000144">
+  <rdfs:subClassOf rdf:resource="#SOO_0000058"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000130"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000024"/>
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000087"/>
+            <rdf:Description rdf:about="#SOO_0000129"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000026"/>
+      <owl:allValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000087"/>
+            <rdf:Description rdf:about="#SOO_0000129"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:allValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">solid transporting</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A transporting process that transports some solid.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000145">
+  <rdfs:subClassOf rdf:resource="#SOO_0000131"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000016"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000117"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">positive displacement liquid transporter module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PositiveDisplacementLiquidTransporterModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000146">
+  <rdfs:subClassOf rdf:resource="#SOO_0000131"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000016"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000117"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">air displacement liquid transporter module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AirDisplacementLiquidTransporterModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000147">
+  <rdfs:subClassOf rdf:resource="#SOO_0000130"/>
+  <rdfs:label xml:lang="en">solid hopper module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SolidHopperModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000149">
+  <rdfs:subClassOf rdf:resource="#SOO_0000146"/>
+  <rdfs:label xml:lang="en">syringe pump module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SyringePumpModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000163">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">[JUNIOR] component</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000164">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Z1 Syringe Pump</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000165">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000258"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Deck</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000258">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">hardware unit container</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware unit used to contain other hardware units. E.g., a vial rack.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note: A well plate should not be considered as a hardware unit container as it directly holds some portions of material.</core:note>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HardwareUnitContainer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000166">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000274"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Z2 Robot Arm</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000274">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">robot arm</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware unit that can move in space. It is often mounted on a base and is motor-driven.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RobotArm</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000168">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000318"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Z1 Syringe</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000318">
+  <rdfs:subClassOf rdf:resource="#SOO_0000315"/>
+  <rdfs:label xml:lang="en">syringe tube</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/equipment#AFE_0000746</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The tube of a syringe, also known as a barrel.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SyringeTube</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000169">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000316"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Positive Displacement Pipette Tip</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000316">
+  <rdfs:subClassOf rdf:resource="#SOO_0000315"/>
+  <rdfs:label xml:lang="en">pipette tip</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The tip of a pipette.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PipetteTip</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000170">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000275"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Positive Displacement Pipette Head</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000275">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">robot arm attachment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An attachment of a robot arm, often used to hold specific hardware units.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RobotArmAttachment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000171">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000262"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Vial Rack Slot (off-deck)</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000262">
+  <rdfs:subClassOf rdf:resource="#SOO_0000258"/>
+  <rdfs:label xml:lang="en">hardware unit slot</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A well-shaped location that is used to hold one or more hardware units.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HardwareUnitSlot</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000174">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000263"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Positive Displacement Pipette Tip Rack</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000263">
+  <rdfs:subClassOf rdf:resource="#SOO_0000258"/>
+  <rdfs:label xml:lang="en">hardware unit rack</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rack that is used to hold one or more hardware units.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HardwareUnitRack</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000175">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000262"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Positive Displacement Pipette Head Slot</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000176">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000262"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Rack Gripper Head Slot</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000182">
+  <rdfs:subClassOf rdf:resource="#SOO_0000180"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000008"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:unionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000011"/>
+            <rdf:Description rdf:about="#SOO_0000091"/>
+          </owl:unionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">hardware operation</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware operation is an operation that changes the state of some hardware unit.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000183">
+  <rdfs:subClassOf rdf:resource="#SOO_0000052"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000184"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000281"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000183"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">chromatography separating</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/process#AFP_0001321</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A chromatography is a separation where the components are distributed between two phases, one of which is stationary, while the other moves in a definite direction.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChromatographySeparating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000184">
+  <rdfs:subClassOf rdf:resource="#SOO_0000279"/>
+  <rdfs:label xml:lang="en">chromatography module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ChromatographyModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000185">
+  <rdfs:subClassOf rdf:resource="#SOO_0000053"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000186"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">centrifugating</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/OBI_0302886</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A process separating molecules by density using centrifugal forces generated by a spinning rotor.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Centrifugating</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000186">
+  <rdfs:subClassOf rdf:resource="#SOO_0000279"/>
+  <rdfs:label xml:lang="en">centrifugation module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CentrifugationModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000187">
+  <rdfs:subClassOf rdf:resource="#SOO_0000146"/>
+  <rdfs:label xml:lang="en">manual pipette module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ManualPipetteModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000191">
+  <rdfs:subClassOf rdf:resource="#SOO_0000000"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000109"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">endpoint controlled process</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An endpoint controlled process is a material process that does not have an a priori defined endpoint, so its termination depends on an endpoint controller.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EndpointControlledProcess</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000193">
+  <rdfs:subClassOf rdf:resource="#SOO_0000182"/>
+  <rdfs:label xml:lang="en">prepare equipment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware operation that sets up the hardware unit so it is ready for other operations.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrepareEquipment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000194">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:label xml:lang="en">clean hardware unit</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CleanHardwareUnit</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000195">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:label xml:lang="en">dry hardware unit</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DryHardwareUnit</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000196">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:label xml:lang="en">lubricate joint</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LubricateJoint</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000197">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:label xml:lang="en">assemble hardware units</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AssembleHardwareUnits</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000198">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:label xml:lang="en">disassemble hardware unit</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DisassembleHardwareUnit</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000199">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:label xml:lang="en">prepare glassware</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrepareGlassware</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000200">
+  <rdfs:subClassOf rdf:resource="#SOO_0000199"/>
+  <rdfs:label xml:lang="en">to clean glassware</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToCleanGlassware</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000201">
+  <rdfs:subClassOf rdf:resource="#SOO_0000200"/>
+  <rdfs:label xml:lang="en">to wash with detergent</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToWashWithDetergent</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000202">
+  <rdfs:subClassOf rdf:resource="#SOO_0000200"/>
+  <rdfs:label xml:lang="en">to base bath</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToBaseBath</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000203">
+  <rdfs:subClassOf rdf:resource="#SOO_0000199"/>
+  <rdfs:label xml:lang="en">to dry glassware</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToDryGlassware</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000204">
+  <rdfs:subClassOf rdf:resource="#SOO_0000193"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000008"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000303"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">prepare container</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PrepareContainer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000303">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">material holder</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware unit used to directly hold some portions of material.</core:definition>
+  <core:note rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note: By definition some of this unit's surfaces would be in contact with some portions of material.</core:note>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialHolder</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000205">
+  <rdfs:subClassOf rdf:resource="#SOO_0000204"/>
+  <rdfs:label xml:lang="en">to seal container</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToSealContainer</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000206">
+  <rdfs:subClassOf rdf:resource="#SOO_0000204"/>
+  <rdfs:label xml:lang="en">to cap</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToCap</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000207">
+  <rdfs:subClassOf rdf:resource="#SOO_0000204"/>
+  <rdfs:label xml:lang="en">to decap</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToDecap</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000208">
+  <rdfs:subClassOf rdf:resource="#SOO_0000204"/>
+  <rdfs:label xml:lang="en">to purge</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ToPurge</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000209">
+  <rdfs:subClassOf rdf:resource="#SOO_0000144"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000119"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">weighing</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A solid transporting process with the intention to measure the mass of the solid that is being transported.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weighing</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000211">
+  <rdfs:subClassOf rdf:resource="#SOO_0000210"/>
+  <rdfs:label xml:lang="en">overhead stirrer module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OverheadStirrerModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000212">
+  <rdfs:subClassOf rdf:resource="#SOO_0000141"/>
+  <rdfs:label xml:lang="en">sonicator module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SonicatorModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000213">
+  <rdfs:subClassOf rdf:resource="#SOO_0000141"/>
+  <rdfs:label xml:lang="en">vortexer module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VortexerModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000214">
+  <rdfs:subClassOf rdf:resource="#SOO_0000141"/>
+  <rdfs:label xml:lang="en">shaker module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ShakerModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000216">
+  <rdfs:subClassOf rdf:resource="#SOO_0000118"/>
+  <rdfs:label xml:lang="en">source mass controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SourceMassController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000217">
+  <rdfs:subClassOf rdf:resource="#SOO_0000118"/>
+  <rdfs:label xml:lang="en">target mass controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TargetMassController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000218">
+  <rdfs:subClassOf rdf:resource="#SOO_0000116"/>
+  <rdfs:label xml:lang="en">material flow controller</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MaterialFlowController</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000219">
+  <rdfs:subClassOf rdf:resource="#SOO_0000131"/>
+  <rdfs:label xml:lang="en">steeredly pouring liquid module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SteeredlyPouringLiquidModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000220">
+  <rdfs:subClassOf rdf:resource="#SOO_0000124"/>
+  <rdfs:label xml:lang="en">airtight environment</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An airtight environment is an environment that does not allow material transporting across its boundary.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AirtightEnvironment</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000245">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000317"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Z1 Syringe Needle</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000317">
+  <rdfs:subClassOf rdf:resource="#SOO_0000315"/>
+  <rdfs:label xml:lang="en">syringe needle</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The needle of a syringe.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SyringeNeedle</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000260">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000263"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Vial Rack</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000276">
+  <rdfs:subClassOf rdf:resource="#SOO_0000093"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000003"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000058"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000000004"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000058"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">rinse addition</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rinse addition process is an addition of A (a contained material) followed by rinsing the container of A with a specific liquid B, and the addition of B.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RinseAddition</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000277">
+  <rdfs:subClassOf rdf:resource="#SOO_0000047"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000285"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">freeze-pump-thaw</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A degassing process by freezing the separation input to reduce the solubility of gaseous components, then reducing the pressure to extract the gaseous components, followed by gradually thawing the frozen input.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freeze_pump_thaw</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000285">
+  <rdfs:subClassOf rdf:resource="#SOO_0000279"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000015"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000188"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000015"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000286"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">freeze-pump-thaw module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Freeze_pump_thawModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000278">
+  <rdfs:subClassOf rdf:resource="#SOO_0000047"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000284"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">sparging</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A degassing process by introducing a flow of gas that has little or no partial pressure of the gas(es) to be removed.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sparging</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000284">
+  <rdfs:subClassOf rdf:resource="#SOO_0000279"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000015"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000099"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">sparging module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SpargingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000286">
+  <rdfs:subClassOf rdf:resource="#SOO_0000279"/>
+  <rdfs:label xml:lang="en">pressure reducing module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PressureReducingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000290">
+  <rdfs:subClassOf rdf:resource="#SOO_0000050"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000292"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000089"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">dispersive liquid-liquid microextraction</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://doi.org/10.1016/j.chroma.2006.03.007</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An liquid-liquid extracting process during which the mixture of extraction solvent and disperser solvent are rapidly injected into the separation input to form a cloudy solution of fine particles of extraction solvent which is dispersed entirely in the separation input. After centrifuging, the fine particles of extraction solvent are sedimented in the bottom of the centrifugation tube and extracted.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DispersiveLiquid_liquidMicroextraction</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000291">
+  <rdfs:subClassOf rdf:resource="#SOO_0000050"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">funnel extraction</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The separation input is placed in the funnel and an immiscible solvent is added, resulting in two layers that are shaken together and the layer in which the desired component has a higher relative solubility is kept.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FunnelExtraction</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000293">
+  <rdfs:subClassOf rdf:resource="#SOO_0000048"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">washing solid</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A washing process where the material being washed is a solid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WashingSolid</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000294">
+  <rdfs:subClassOf rdf:resource="#SOO_0000048"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">washing liquid</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A washing process where the material being washed is a liquid.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WashingLiquid</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000295">
+  <rdfs:subClassOf rdf:resource="#SOO_0000034"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000299"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">rotary evaporation</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0001576</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The removal of solvent from a sample by applying heat and lowering the pressure above the sample whilst rotating it at 10–300 rpm.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RotaryEvaporation</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000299">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000015"/>
+      <owl:someValuesFrom rdf:resource="#SOO_0000286"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">rotary evaporating module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RotaryEvaporatingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000296">
+  <rdfs:subClassOf rdf:resource="#SOO_0000091"/>
+  <rdfs:label xml:lang="en">condensing module</rdfs:label>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CondensingModule</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000297">
+  <rdfs:subClassOf rdf:resource="#SOO_0000039"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#SOO_0000115"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="#SOO_0000091"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#SOO_0000015"/>
+              <owl:someValuesFrom rdf:resource="#SOO_0000215"/>
+            </owl:Restriction>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="#SOO_0000015"/>
+              <owl:someValuesFrom rdf:resource="#SOO_0000286"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:label xml:lang="en">vacuum distillating</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/CHMO_0001540</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A method of separating mixtures based on differences in their volatilities in a boiling liquid mixture. The components in a high-boiling-point sample mixture are vaporised by the application of heat at low pressure and then cooled by the action of cold water in a condenser.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000300">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SOO_0000000"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#SOO_0000115"/>
+          <owl:someValuesFrom rdf:resource="#SOO_0000091"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#SOO_0000180"/>
+  <rdfs:label xml:lang="en">module operation</rdfs:label>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A module operation is a material process whose description necessitates defining one or more functional modules.</core:definition>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000301">
+  <rdfs:subClassOf rdf:resource="#SOO_0000011"/>
+  <rdfs:label xml:lang="en">condensor</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.obolibrary.org/obo/PROCO_0000178</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A hardware unit used to condense vapors into liquid by cooling. It is often used with some coolant.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Condensor</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000302">
+  <rdfs:subClassOf rdf:resource="#SOO_0000163"/>
+  <rdfs:subClassOf rdf:resource="#SOO_0000275"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Solid Hopper Head</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000305">
+  <rdfs:subClassOf rdf:resource="#SOO_0000304"/>
+  <rdfs:label xml:lang="en">vial</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/equipment#AFE_0000329</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A vial is a small vessel or bottle.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vial</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000306">
+  <rdfs:subClassOf rdf:resource="#SOO_0000305"/>
+  <rdfs:label xml:lang="en">[JUNIOR] HRV</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000307">
+  <rdfs:subClassOf rdf:resource="#SOO_0000305"/>
+  <rdfs:label xml:lang="en">[JUNIOR] MRV</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000314">
+  <rdfs:subClassOf rdf:resource="#SOO_0000304"/>
+  <rdfs:label xml:lang="en">well plate</rdfs:label>
+  <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.allotrope.org/ontologies/equipment#AFE_0000029</rdfs:seeAlso>
+  <core:definition rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A plate is a tray with multiple "wells" used as small test tubes.</core:definition>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WellPlate</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="#SOO_0000322">
+  <rdfs:subClassOf rdf:resource="#SOO_0000262"/>
+  <rdfs:label xml:lang="en">[JUNIOR] Balance Slot</rdfs:label>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#F1-Filter">
+  <rdf:type rdf:resource="#SOO_0000134"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F1-Filter</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"made of": "celite"}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Rotavap1">
+  <rdf:type rdf:resource="#SOO_0000299"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rotavap1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001301">
+  <rdf:type rdf:resource="#SOO_0000130"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Junior-SvHopper</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001311">
+  <rdf:type rdf:resource="#SOO_0000131"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Junior-Z1LiquidModule</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001312">
+  <rdf:type rdf:resource="#SOO_0000131"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Junior-Z2LiquidModule</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#a6a0362b-3b64-4189-8b7a-e202356d76de">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">a6a0362b-3b64-4189-8b7a-e202356d76de</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#0b9037ad-da62-4337-a1a2-7225b4732172">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0b9037ad-da62-4337-a1a2-7225b4732172</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "0b9037ad-da62-4337-a1a2-7225b4732172", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001421">
+  <rdf:type rdf:resource="#SOO_0000142"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Junior-ReactorStirrer</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00000991">
+  <rdf:type rdf:resource="#SOO_0000099"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HumanHands</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#5f993f88-2d1b-4594-bbab-2b33ea43065d">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5f993f88-2d1b-4594-bbab-2b33ea43065d</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "5f993f88-2d1b-4594-bbab-2b33ea43065d", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#57c1f2dc-caaa-4de7-8e64-78d036fcfad5">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#5f993f88-2d1b-4594-bbab-2b33ea43065d"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">57c1f2dc-caaa-4de7-8e64-78d036fcfad5</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "57c1f2dc-caaa-4de7-8e64-78d036fcfad5", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "5f993f88-2d1b-4594-bbab-2b33ea43065d", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#f0734235-1857-42ab-b4ff-b1831589d1bc">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">f0734235-1857-42ab-b4ff-b1831589d1bc</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "f0734235-1857-42ab-b4ff-b1831589d1bc", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#e7cf93c1-a7d3-4601-a669-382615b376b9">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#f0734235-1857-42ab-b4ff-b1831589d1bc"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e7cf93c1-a7d3-4601-a669-382615b376b9</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "e7cf93c1-a7d3-4601-a669-382615b376b9", "composition": {"chemical label: R2": {"amount_unit": "mg", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "f0734235-1857-42ab-b4ff-b1831589d1bc", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#9b0b8292-987d-4ccd-be4e-efeb70dfbb06">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">9b0b8292-987d-4ccd-be4e-efeb70dfbb06</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "9b0b8292-987d-4ccd-be4e-efeb70dfbb06", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#e054b704-f69c-4e1e-81be-1dfb223a144f">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#9b0b8292-987d-4ccd-be4e-efeb70dfbb06"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e054b704-f69c-4e1e-81be-1dfb223a144f</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "e054b704-f69c-4e1e-81be-1dfb223a144f", "composition": {"chemical label: R3": {"amount_unit": "mg", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "9b0b8292-987d-4ccd-be4e-efeb70dfbb06", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#43beccef-de3f-43eb-ac74-a48ee7f37bda">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">43beccef-de3f-43eb-ac74-a48ee7f37bda</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "43beccef-de3f-43eb-ac74-a48ee7f37bda", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#3ef80de8-04d5-4fdc-8144-c34d606d6cd4">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#43beccef-de3f-43eb-ac74-a48ee7f37bda"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3ef80de8-04d5-4fdc-8144-c34d606d6cd4</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "3ef80de8-04d5-4fdc-8144-c34d606d6cd4", "composition": {"chemical label: S1": {"amount_unit": "mL", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "43beccef-de3f-43eb-ac74-a48ee7f37bda", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#d113f7ec-41bc-4f59-9f4f-a189c6faf011">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d113f7ec-41bc-4f59-9f4f-a189c6faf011</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "d113f7ec-41bc-4f59-9f4f-a189c6faf011", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#2a54d40f-117b-4cb2-978f-3dd0a4eb8ffe">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#d113f7ec-41bc-4f59-9f4f-a189c6faf011"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2a54d40f-117b-4cb2-978f-3dd0a4eb8ffe</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "2a54d40f-117b-4cb2-978f-3dd0a4eb8ffe", "composition": {"chemical label: S2": {"amount_unit": "mL", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "d113f7ec-41bc-4f59-9f4f-a189c6faf011", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#c2f9d1e9-6aaf-4532-8b44-c011b3554b9f">
+  <rdf:type rdf:resource="#SOO_0000304"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c2f9d1e9-6aaf-4532-8b44-c011b3554b9f</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "c2f9d1e9-6aaf-4532-8b44-c011b3554b9f", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#c9a7758c-8e26-485a-a95b-55e03e73c3fa">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#c2f9d1e9-6aaf-4532-8b44-c011b3554b9f"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9a7758c-8e26-485a-a95b-55e03e73c3fa</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "c9a7758c-8e26-485a-a95b-55e03e73c3fa", "composition": {"chemical label: S3": {"amount_unit": "mL", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "c2f9d1e9-6aaf-4532-8b44-c011b3554b9f", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#020434e5-acb7-494f-b179-a76d97eb75c0">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#5f993f88-2d1b-4594-bbab-2b33ea43065d"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">020434e5-acb7-494f-b179-a76d97eb75c0</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "020434e5-acb7-494f-b179-a76d97eb75c0", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "5f993f88-2d1b-4594-bbab-2b33ea43065d", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#27cca03e-182d-48fc-a7ea-a8796562f898">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#f0734235-1857-42ab-b4ff-b1831589d1bc"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">27cca03e-182d-48fc-a7ea-a8796562f898</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "27cca03e-182d-48fc-a7ea-a8796562f898", "composition": {"chemical label: R2": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "f0734235-1857-42ab-b4ff-b1831589d1bc", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#47064e19-961f-4faa-a338-866466ed6b5c">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#9b0b8292-987d-4ccd-be4e-efeb70dfbb06"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">47064e19-961f-4faa-a338-866466ed6b5c</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "47064e19-961f-4faa-a338-866466ed6b5c", "composition": {"chemical label: R3": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "9b0b8292-987d-4ccd-be4e-efeb70dfbb06", "made_of": "glass", "max_capacity": {"amount_unit": "mg", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001391">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#020434e5-acb7-494f-b179-a76d97eb75c0"/>
+  <SOO_0000026 rdf:resource="#aec2afa7-47d8-4cfe-b432-55c21e7950c6"/>
+  <SOO_0000115 rdf:resource="#soo_00001301"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#aec2afa7-47d8-4cfe-b432-55c21e7950c6">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#a6a0362b-3b64-4189-8b7a-e202356d76de"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">aec2afa7-47d8-4cfe-b432-55c21e7950c6</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "aec2afa7-47d8-4cfe-b432-55c21e7950c6", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001392">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#27cca03e-182d-48fc-a7ea-a8796562f898"/>
+  <SOO_0000024 rdf:resource="#aec2afa7-47d8-4cfe-b432-55c21e7950c6"/>
+  <SOO_0000026 rdf:resource="#d6a96a79-461c-437d-a29d-bea82230451c"/>
+  <SOO_0000115 rdf:resource="#soo_00001301"/>
+  <SOO_0000095 rdf:resource="#soo_00001391"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__2</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#d6a96a79-461c-437d-a29d-bea82230451c">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#a6a0362b-3b64-4189-8b7a-e202356d76de"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d6a96a79-461c-437d-a29d-bea82230451c</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "d6a96a79-461c-437d-a29d-bea82230451c", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R2": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001393">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#47064e19-961f-4faa-a338-866466ed6b5c"/>
+  <SOO_0000024 rdf:resource="#d6a96a79-461c-437d-a29d-bea82230451c"/>
+  <SOO_0000026 rdf:resource="#03dd5e39-3f80-47bd-939b-39148acfc311"/>
+  <SOO_0000115 rdf:resource="#soo_00001301"/>
+  <SOO_0000095 rdf:resource="#soo_00001392"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__3</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#03dd5e39-3f80-47bd-939b-39148acfc311">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#a6a0362b-3b64-4189-8b7a-e202356d76de"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">03dd5e39-3f80-47bd-939b-39148acfc311</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "03dd5e39-3f80-47bd-939b-39148acfc311", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R2": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R3": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["SOLID"], "is_contained_by": {"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#c36ce595-4ab5-4663-adcd-99ddd0119536">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#43beccef-de3f-43eb-ac74-a48ee7f37bda"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c36ce595-4ab5-4663-adcd-99ddd0119536</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "c36ce595-4ab5-4663-adcd-99ddd0119536", "composition": {"chemical label: S1": {"amount_unit": "mL", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "43beccef-de3f-43eb-ac74-a48ee7f37bda", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#d456eea0-84da-4142-8bb4-65131690f68c">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#d113f7ec-41bc-4f59-9f4f-a189c6faf011"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">d456eea0-84da-4142-8bb4-65131690f68c</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "d456eea0-84da-4142-8bb4-65131690f68c", "composition": {"chemical label: S2": {"amount_unit": "mL", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "d113f7ec-41bc-4f59-9f4f-a189c6faf011", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001394">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#c36ce595-4ab5-4663-adcd-99ddd0119536"/>
+  <SOO_0000024 rdf:resource="#03dd5e39-3f80-47bd-939b-39148acfc311"/>
+  <SOO_0000026 rdf:resource="#38f882f4-936e-4d05-8976-a68f9c9c97fe"/>
+  <SOO_0000115 rdf:resource="#soo_00001311"/>
+  <SOO_0000095 rdf:resource="#soo_00001393"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__4</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#38f882f4-936e-4d05-8976-a68f9c9c97fe">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#a6a0362b-3b64-4189-8b7a-e202356d76de"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">38f882f4-936e-4d05-8976-a68f9c9c97fe</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "38f882f4-936e-4d05-8976-a68f9c9c97fe", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R2": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R3": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: S1": {"amount_unit": "mL", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001395">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#d456eea0-84da-4142-8bb4-65131690f68c"/>
+  <SOO_0000024 rdf:resource="#38f882f4-936e-4d05-8976-a68f9c9c97fe"/>
+  <SOO_0000026 rdf:resource="#82e6ce3c-ee34-4c2e-8729-01dfba54d54b"/>
+  <SOO_0000115 rdf:resource="#soo_00001312"/>
+  <SOO_0000095 rdf:resource="#soo_00001394"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__5</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#82e6ce3c-ee34-4c2e-8729-01dfba54d54b">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#a6a0362b-3b64-4189-8b7a-e202356d76de"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">82e6ce3c-ee34-4c2e-8729-01dfba54d54b</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "82e6ce3c-ee34-4c2e-8729-01dfba54d54b", "composition": {"chemical label: R1": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R2": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: R3": {"amount_unit": "mg", "amount_value": 5.0, "details": ""}, "chemical label: S1": {"amount_unit": "mL", "amount_value": 5.0, "details": ""}, "chemical label: S2": {"amount_unit": "mL", "amount_value": 5.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ab08c23d-6c4d-494e-bede-5ca91c47eccb">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#a6a0362b-3b64-4189-8b7a-e202356d76de"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ab08c23d-6c4d-494e-bede-5ca91c47eccb</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "ab08c23d-6c4d-494e-bede-5ca91c47eccb", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}}, "state_of_matter": ["UNKNOWN"], "is_contained_by": {"identifier": "a6a0362b-3b64-4189-8b7a-e202356d76de", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001401">
+  <rdf:type rdf:resource="#SOO_0000140"/>
+  <SOO_0000115 rdf:resource="#soo_00001421"/>
+  <SOO_0000024 rdf:resource="#82e6ce3c-ee34-4c2e-8729-01dfba54d54b"/>
+  <SOO_0000026 rdf:resource="#ab08c23d-6c4d-494e-bede-5ca91c47eccb"/>
+  <SOO_0000095 rdf:resource="#soo_00001395"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mixing with agitation__1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"stirring rate": "500 rpm", "lasting time": "24 hrs"}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001396">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#ab08c23d-6c4d-494e-bede-5ca91c47eccb"/>
+  <SOO_0000026 rdf:resource="#c0bc5bae-54cb-4f68-a93e-6d99645f13b7"/>
+  <SOO_0000115 rdf:resource="#soo_00000991"/>
+  <SOO_0000095 rdf:resource="#soo_00001401"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__6</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#c0bc5bae-54cb-4f68-a93e-6d99645f13b7">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c0bc5bae-54cb-4f68-a93e-6d99645f13b7</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "c0bc5bae-54cb-4f68-a93e-6d99645f13b7", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}}, "state_of_matter": ["UNKNOWN"], "is_contained_by": {"identifier": "6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00002951">
+  <rdf:type rdf:resource="#SOO_0000295"/>
+  <rdf:type rdf:resource="#SOO_0000191"/>
+  <SOO_0000115 rdf:resource="#Rotavap1"/>
+  <SOO_0000000006 rdf:resource="#c0bc5bae-54cb-4f68-a93e-6d99645f13b7"/>
+  <SOO_0000000007 rdf:resource="#6538ac8b-9ffe-467e-96bd-76cb73af8c0e"/>
+  <SOO_0000095 rdf:resource="#soo_00001396"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rotary evaporation__1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#6538ac8b-9ffe-467e-96bd-76cb73af8c0e">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6538ac8b-9ffe-467e-96bd-76cb73af8c0e</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "6538ac8b-9ffe-467e-96bd-76cb73af8c0e", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}}, "state_of_matter": ["UNKNOWN"], "is_contained_by": {"identifier": "6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#e9b2a359-d416-4a69-b831-4170889a7670">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#c2f9d1e9-6aaf-4532-8b44-c011b3554b9f"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">e9b2a359-d416-4a69-b831-4170889a7670</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "e9b2a359-d416-4a69-b831-4170889a7670", "composition": {"chemical label: S3": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "c2f9d1e9-6aaf-4532-8b44-c011b3554b9f", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001397">
+  <rdf:type rdf:resource="#SOO_0000139"/>
+  <SOO_0000024 rdf:resource="#e9b2a359-d416-4a69-b831-4170889a7670"/>
+  <SOO_0000024 rdf:resource="#6538ac8b-9ffe-467e-96bd-76cb73af8c0e"/>
+  <SOO_0000026 rdf:resource="#263413ae-5eec-4f28-a77f-7c2b3cbcb717"/>
+  <SOO_0000115 rdf:resource="#soo_00001311"/>
+  <SOO_0000095 rdf:resource="#soo_00002951"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">combining materials__7</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#263413ae-5eec-4f28-a77f-7c2b3cbcb717">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">263413ae-5eec-4f28-a77f-7c2b3cbcb717</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "263413ae-5eec-4f28-a77f-7c2b3cbcb717", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "chemical label: S3": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#b2346461-147b-4129-b179-8d098965c2ac">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">b2346461-147b-4129-b179-8d098965c2ac</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "b2346461-147b-4129-b179-8d098965c2ac", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "chemical label: S3": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "6ea9d7f3-ab26-4ae9-8be1-5df8e8a3b6f4", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00001402">
+  <rdf:type rdf:resource="#SOO_0000140"/>
+  <SOO_0000115 rdf:resource="#soo_00001421"/>
+  <SOO_0000024 rdf:resource="#263413ae-5eec-4f28-a77f-7c2b3cbcb717"/>
+  <SOO_0000026 rdf:resource="#b2346461-147b-4129-b179-8d098965c2ac"/>
+  <rdf:type rdf:resource="#SOO_0000191"/>
+  <SOO_0000095 rdf:resource="#soo_00001397"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mixing with agitation__2</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"stirring rate": "500 rpm", "lasting time": "24 hrs"}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00000411">
+  <rdf:type rdf:resource="#SOO_0000041"/>
+  <rdf:type rdf:resource="#SOO_0000191"/>
+  <SOO_0000115 rdf:resource="#F1-Filter"/>
+  <SOO_0000000006 rdf:resource="#b2346461-147b-4129-b179-8d098965c2ac"/>
+  <SOO_0000026 rdf:resource="#7b452def-0be0-483f-af78-d0d9f10e63ef"/>
+  <SOO_0000095 rdf:resource="#soo_00001402"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">filtering__1</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#7b452def-0be0-483f-af78-d0d9f10e63ef">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#0b9037ad-da62-4337-a1a2-7225b4732172"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">7b452def-0be0-483f-af78-d0d9f10e63ef</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "7b452def-0be0-483f-af78-d0d9f10e63ef", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "chemical label: S3": {"amount_unit": "mL", "amount_value": 10.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "0b9037ad-da62-4337-a1a2-7225b4732172", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#soo_00002952">
+  <rdf:type rdf:resource="#SOO_0000295"/>
+  <rdf:type rdf:resource="#SOO_0000191"/>
+  <SOO_0000115 rdf:resource="#Rotavap1"/>
+  <SOO_0000000006 rdf:resource="#7b452def-0be0-483f-af78-d0d9f10e63ef"/>
+  <SOO_0000000007 rdf:resource="#bdee0355-76c7-45af-9047-fc0358f4b95f"/>
+  <SOO_0000095 rdf:resource="#soo_00000411"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rotary evaporation__2</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">null</has_value_functional>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#bdee0355-76c7-45af-9047-fc0358f4b95f">
+  <rdf:type rdf:resource="#SOO_0000078"/>
+  <SOO_0000027 rdf:resource="#0b9037ad-da62-4337-a1a2-7225b4732172"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bdee0355-76c7-45af-9047-fc0358f4b95f</rdfs:label>
+  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "bdee0355-76c7-45af-9047-fc0358f4b95f", "composition": {"Product": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "IMPURITY": {"amount_unit": "UNKNOWN", "amount_value": Infinity, "details": ""}, "chemical label: S3": {"amount_unit": "mL", "amount_value": 9.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "0b9037ad-da62-4337-a1a2-7225b4732172", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 20.0, "details": ""}}}</has_value_functional>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

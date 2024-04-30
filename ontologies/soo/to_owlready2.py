@@ -1,16 +1,12 @@
-import glob
 import os.path
-import pathlib
-import pprint
-import shutil
 from collections import defaultdict
 
-from owlready2 import Ontology, ObjectPropertyClass, ThingClass, onto_path, get_ontology
-from pandas._typing import FilePath
+from owlready2 import Ontology, ObjectPropertyClass, ThingClass, get_ontology
+
 _this_folder = os.path.abspath(os.path.dirname(__file__))
 _owl_filename = os.path.join(_this_folder, "soo.owl")
 _owl_iri = "http://www.ontosynthesis.org/SOO"
-_tag_class = "owl:Class" 
+_tag_class = "owl:Class"
 _tag_object_property = "owl:ObjectProperty"
 _tag_rdfs_label = 'rdfs:label'
 _tag_skos_definition = 'skos:definition'
@@ -22,15 +18,19 @@ from owlready2 import get_ontology
 onto = get_ontology("file://{_owl_filename}").load()
 """
 
+
 class OwlParseError(Exception): pass
+
 
 def to_camel_case(snake_str):
     return "".join(x.capitalize() for x in snake_str.lower().split("_"))
+
 
 def is_legal_python_name(name: str):
     if name[0].isalpha() and all(c.isalnum() or c == "_" for c in name[1:]):
         return True
     return False
+
 
 def get_tag_content(lines: list[str], tag: str) -> list[list[str]]:
     """
@@ -55,6 +55,7 @@ def get_tag_content(lines: list[str], tag: str) -> list[list[str]]:
             tag_content = lines[i: i + j + 1]
             tag_contents.append(tag_content)
     return tag_contents
+
 
 def parse_thing_class(lines: list[str]):
     try:
@@ -132,11 +133,11 @@ def export_python_class(onto: Ontology, definition: str, class_name: str, iri: s
 {python_class_name} = onto.search_one(iri="{iri}")
 {rename_template}
     """
-#     template = f"""
-# {python_class_name} = onto.search_one(iri="{iri}")
-# {rename_template}
-# {python_class_name}.isDefinedBy.append('{definition}')
-#     """
+    #     template = f"""
+    # {python_class_name} = onto.search_one(iri="{iri}")
+    # {rename_template}
+    # {python_class_name}.isDefinedBy.append('{definition}')
+    #     """
     return template, python_class_name
 
 
@@ -183,7 +184,7 @@ def owl_to_owlready2():
     bundle = []
 
     owl_data = parse_owl()
-    block_code, registered_iris, registered_onto_classes_names = export_owlready2(ontology, owl_data,)
+    block_code, registered_iris, registered_onto_classes_names = export_owlready2(ontology, owl_data, )
     bundle += block_code
     bundle = sorted(bundle)
     bundle = "\n".join(bundle)

@@ -4,3 +4,4 @@ pandas
 dash_cytoscape
 dash_bootstrap_components
 networkx
+pydantic
