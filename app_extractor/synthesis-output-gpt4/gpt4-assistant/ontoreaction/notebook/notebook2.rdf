@@ -1,0 +1,64 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <ontoreaction:ReactionExperiment rdf:about="#ChemicalSynthesisExperiment">
+        <ontoreaction:hasInputChemical rdf:resource="#Triazolybenzenemethanol"/>
+        <ontoreaction:hasInputChemical rdf:resource="#TEMPO"/>
+        <ontoreaction:hasInputChemical rdf:resource="#BAIB"/>
+        <ontoreaction:hasSolvent rdf:resource="#DCM"/>
+        <ontoreaction:hasSolvent rdf:resource="#Water"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#Acid"/>
+        <ontoreaction:hasReactionScale rdf:resource="#Scale0_2mmol"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#StirringRoomTemp"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#ReactionTime24Hours"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Input Chemicals -->
+    <ontoreaction:InputChemical rdf:about="#Triazolybenzenemethanol">
+        <rdfs:label>triazolybenzenemethanol (CAS 143426-50-0)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#TEMPO">
+        <rdfs:label>TEMPO (CAS 2564-83-2)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#BAIB">
+        <rdfs:label>BAIB (CAS 3240-34-4)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Solvents -->
+    <ontoreaction:Solvent rdf:about="#DCM">
+        <rdfs:label>Dichloromethane (DCM, CAS 75-09-2)</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:Solvent rdf:about="#Water">
+        <rdfs:label>Water (CAS 7732-18-5)</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <!-- Output Chemical -->
+    <ontoreaction:OutputChemical rdf:about="#Acid">
+        <rdfs:label>Acid (CAS 162848-16-0)</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Reaction Conditions -->
+    <ontoreaction:ReactionCondition rdf:about="#StirringRoomTemp">
+        <rdfs:label>Stirring at 500 rpm at room temperature</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#ReactionTime24Hours">
+        <rdfs:label>Wait for 24 hours</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <!-- Reaction Scale -->
+    <ontoreaction:ReactionScale rdf:about="#Scale0_2mmol">
+        <rdfs:label>Scale of the reaction 0.2 mmol limiting reactant</rdfs:label>
+    </ontoreaction:ReactionScale>
+
+</rdf:RDF>

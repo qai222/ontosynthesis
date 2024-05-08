@@ -1,0 +1,58 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <ontoreaction:ReactionExperiment rdf:about="#SyntheticProcedure">
+        <ontoreaction:hasInputChemical rdf:resource="#Amine"/>
+        <ontoreaction:hasInputChemical rdf:resource="#SulfonylChloride"/>
+        <ontoreaction:hasInputChemical rdf:resource="#Pyridine"/>
+        <ontoreaction:hasSolvent rdf:resource="#DCM"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#Sulfonamide"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#StirringCondition"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#WaitingCondition"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#SeparationCondition"/>
+        <ontoreaction:hasReactionScale rdf:resource="#ReactionScale0_2mmol"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:InputChemical rdf:about="#Amine">
+        <rdfs:label>Amine (CAS 769-92-6)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#SulfonylChloride">
+        <rdfs:label>Sulfonyl Chloride (CAS 98-59-9)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#Pyridine">
+        <rdfs:label>Pyridine (CAS 110-86-1)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:Solvent rdf:about="#DCM">
+        <rdfs:label>Dichloromethane (DCM, CAS 75-09-2)</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:OutputChemical rdf:about="#Sulfonamide">
+        <rdfs:label>Sulfonamide (CAS 697786-47-3)</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <ontoreaction:ReactionCondition rdf:about="#StirringCondition">
+        <rdfs:label>Stirring at 500 rpm for specified times</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#WaitingCondition">
+        <rdfs:label>Wait specific periods before proceeding to the next step</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#SeparationCondition">
+        <rdfs:label>Separate organic and aqueous layers</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionScale rdf:about="#ReactionScale0_2mmol">
+        <rdfs:label>Scale of the reaction 0.2 mmol</rdfs:label>
+    </ontoreaction:ReactionScale>
+</rdf:RDF>
