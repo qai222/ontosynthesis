@@ -47,7 +47,7 @@ class UnstructuredReactionDescription(BaseModel):
     structured_data_type: str | None = None
     """ type of the corresponding structured data """
 
-    writing_style: WritingStyle
+    writing_style: WritingStyle | None = None
     """ writing style of the unstructured description """
 
     specificity: float | METER | None = None
