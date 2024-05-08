@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:SOO="http://www.ontosynthesis.org/SOO#">
+
+    <!-- Chemical Materials -->
+    <owl:NamedIndividual rdf:about="#Ethylene">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#SOO_0000078"/>
+        <rdfs:label>ethylene</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Reactant_1a">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#SOO_0000078"/>
+        <rdfs:label>Reactant 1a</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#1_4_Dioxane">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#SOO_0000078"/>
+        <rdfs:label>1,4-dioxane (Solvent)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Cyclopentenone3e">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#SOO_0000078"/>
+        <rdfs:label>Cyclo-pentenone 3e (Product)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Reaction Process -->
+    <owl:NamedIndividual rdf:about="#ChemicalReactionProcess">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#SOO_0000031"/>
+        <rdfs:label>Reaction of ethylene with 1a yielding cyclo-pentenone 3e</rdfs:label>
+        <SOO:has_material_input rdf:resource="#Ethylene"/>
+        <SOO:has_material_input rdf:resource="#Reactant_1a"/>
+        <SOO:has_material_input rdf:resource="#1_4_Dioxane"/>
+        <SOO:operates_on rdf:resource="#Cyclopentenone3e"/>
+        <SOO:has_output rdf:resource="#Cyclopentenone3e"/>
+        <SOO:has_percent_yield rdf:datatype="http://www.w3.org/2001/XMLSchema#double">65</SOO:has_percent_yield>
+    </owl:NamedIndividual>
+</rdf:RDF>
