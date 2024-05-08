@@ -1,0 +1,45 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <!-- Reaction Experiment Instance -->
+    <ontoreaction:ReactionExperiment rdf:about="#AnodicOxidationExperiment">
+        <ontoreaction:isOccurenceOf rdf:resource="#AnodicOxidationReaction"/>
+        <ontoreaction:hasInputChemical rdf:resource="#Compound2Plus"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#Monomer2m"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#CVConditions"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#LowTemperatureCondition"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Input Chemical -->
+    <ontoreaction:InputChemical rdf:about="#Compound2Plus">
+        <rdfs:label>Compound 2'</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Output Chemical -->
+    <ontoreaction:OutputChemical rdf:about="#Monomer2m">
+        <rdfs:label>Monomer 2m</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- CV conditions -->
+    <ontoreaction:ReactionCondition rdf:about="#CVConditions">
+        <rdfs:label>Performed under cyclic voltammetry conditions</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <!-- Low temperature condition -->
+    <ontoreaction:ReactionCondition rdf:about="#LowTemperatureCondition">
+        <rdfs:label>Performed at low temperatures</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <!-- Anodic Oxidation Reaction -->
+    <ontoreaction:ChemicalReaction rdf:about="#AnodicOxidationReaction">
+        <rdfs:label>An oxidation reaction where monomer 2m forms from compound 2' under specific electrochemical conditions</rdfs:label>
+    </ontoreaction:ChemicalReaction>
+
+</rdf:RDF>

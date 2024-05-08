@@ -1,0 +1,110 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <ontoreaction:ReactionExperiment rdf:about="#CopperCatalystPreparation">
+        <ontoreaction:hasInputChemical rdf:resource="#CuCl2"/>
+        <ontoreaction:hasInputChemical rdf:resource="#terpyridineLigand"/>
+        <ontoreaction:hasSolvent rdf:resource="#THF"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#VialPrepWithN2"/>
+        <ontoreaction:hasReagentPreparation rdf:resource="#SyringeAdditionTHF"/>
+        <ontoreaction:hasPhysicalProcessing rdf:resource="#Sonication"/>
+    </ontoreaction:ReactionExperiment>
+
+     <ontoreaction:ReactionExperiment rdf:about="#PhotoCatalysisExperiment">
+        <ontoreaction:hasInputChemical rdf:resource="#CopperTerpyCl2"/>
+        <ontoreaction:hasInputChemical rdf:resource="#Photocatalyst"/>
+        <ontoreaction:hasInputChemical rdf:resource="#CF3Reagent"/>
+        <ontoreaction:hasInputChemical rdf:resource="#TBACl"/>
+        <ontoreaction:hasSolvent rdf:resource="#DMSO"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#VialPrepWithN2Second"/>
+        <ontoreaction:hasReagentPreparation rdf:resource="#SyringeAdditionDMSO"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:ReactionExperiment rdf:about="#ActivatedAlcoholPreparation">
+        <ontoreaction:hasInputChemical rdf:resource="#ActivatedAlcohol"/>
+        <ontoreaction:hasInputChemical rdf:resource="#quinuclidine"/>
+        <ontoreaction:hasSolvent rdf:resource="#tBuOMe"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#VigorousStirring"/>
+        <ontoreaction:hasReagentPreparation rdf:resource="#PyridineAddition"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:InputChemical rdf:about="#CuCl2">
+        <rdfs:label>CuCl2</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#terpyridineLigand">
+        <rdfs:label>terpyridine Ligand</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#CopperTerpyCl2">
+        <rdfs:label>Cu(terpy)Cl2</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#Photocatalyst">
+        <rdfs:label>Photocatalyst</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#CF3Reagent">
+        <rdfs:label>CF3 Reagent</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#TBACl">
+        <rdfs:label>TBACl</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#ActivatedAlcohol">
+        <rdfs:label>Activated Alcohol</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#quinuclidine">
+        <rdfs:label>quinuclidine</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:Solvent rdf:about="#THF">
+        <rdfs:label>Tetrahydrofuran (THF)</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:Solvent rdf:about="#DMSO">
+        <rdfs:label>Dimethyl Sulfoxide (DMSO)</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:Solvent rdf:about="#tBuOMe">
+        <rdfs:label>t-Butyl Methyl Ether (t-BuOMe)</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:ReactionCondition rdf:about="#VialPrepWithN2">
+        <rdfs:label>Vial preparation with nitrogen backfilling</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#VialPrepWithN2Second">
+        <rdfs:label>Vial preparation with nitrogen backfilling for second reaction</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#VigorousStirring">
+        <rdfs:label>Vigorous stirring under nitrogen</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:PhysicalProcessing rdf:about="#Sonication">
+        <rdfs:label>Sonication until fine suspension</rdfs:label>
+    </ontoreaction:PhysicalProcessing>
+
+    <ontoreaction:ReagentPreparation rdf:about="#SyringeAdditionTHF">
+        <rdfs:label>THF addition via syringe</rdfs:label>
+    </ontoreaction:ReagentPreparation>
+
+    <ontoreaction:ReagentPreparation rdf:about="#SyringeAdditionDMSO">
+        <rdfs:label>DMSO addition via syringe</rdfs:label>
+    </ontoreaction:ReagentPreparation>
+
+    <ontoreaction:ReagentPreparation rdf:about="#PyridineAddition">
+        <rdfs:label>Pyridine addition dropwise</rdfs:label>
+    </ontoreaction:ReagentPreparation>
+
+</rdf:RDF>

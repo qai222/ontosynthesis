@@ -1,0 +1,74 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <!-- Reaction Experiment Instance -->
+    <ontoreaction:ReactionExperiment rdf:about="#ChemicalReactionSetup">
+        <ontoreaction:hasInputChemical rdf:resource="#NaCl"/>
+        <ontoreaction:hasInputChemical rdf:resource="#1_Bromonaphtalene"/>
+        <ontoreaction:hasInputChemical rdf:resource="#PalladiumComplex"/>
+        <ontoreaction:hasInputChemical rdf:resource="#n_BuLi"/>
+        <ontoreaction:hasSolvent rdf:resource="#DeionizedWater"/>
+        <ontoreaction:hasSolvent rdf:resource="#CyclohexaneSolution"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#Product2aa"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#RoomTempStirring"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#UnderArgon"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#InAir"/>
+        <ontoreaction:hasYield rdf:resource="#Yield99Percent"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Input Chemicals -->
+    <ontoreaction:InputChemical rdf:about="#NaCl">
+        <rdfs:label>Sodium Chloride (NaCl)</rdfs:label>
+    </ontoreaction:InputChemical>
+    
+    <ontoreaction:InputChemical rdf:about="#1_Bromonaphtalene">
+        <rdfs:label>1-bromonaphthalene (1a)</rdfs:label>
+    </ontoreaction:InputChemical>
+    
+    <ontoreaction:InputChemical rdf:about="#PalladiumComplex">
+        <rdfs:label>Pd[P(t-Bu)3]2</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#n_BuLi">
+        <rdfs:label>n-BuLi</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Solvents -->
+    <ontoreaction:Solvent rdf:about="#DeionizedWater">
+        <rdfs:label>Deionized Water</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:Solvent rdf:about="#CyclohexaneSolution">
+        <rdfs:label>n-BuLi in Cyclohexane</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <!-- Output Chemical -->
+    <ontoreaction:OutputChemical rdf:about="#Product2aa">
+        <rdfs:label>Product 2aa</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Reaction Conditions -->
+    <ontoreaction:ReactionCondition rdf:about="#RoomTempStirring">
+        <rdfs:label>Vigorous stirring at room temperature</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#UnderArgon">
+        <rdfs:label>Handled under argon using Schlenk techniques</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <ontoreaction:ReactionCondition rdf:about="#InAir">
+        <rdfs:label>Performed in air</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <!-- Yield Performance Indicator -->
+    <ontoreaction:Yield rdf:about="#Yield99Percent">
+        <rdfs:label>99% Yield</rdfs:label>
+    </ontoreaction:Yield>
+</rdf:RDF>

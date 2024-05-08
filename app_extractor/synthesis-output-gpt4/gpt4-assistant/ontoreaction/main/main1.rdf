@@ -1,0 +1,45 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <!-- Reaction Experiment Instance -->
+    <ontoreaction:ReactionExperiment rdf:about="#ReactionExperiment3e">
+        <ontoreaction:isOccurenceOf rdf:resource="#ChemicalReaction3e"/>
+        <ontoreaction:hasInputChemical rdf:resource="#Ethylene2b"/>
+        <ontoreaction:hasInputChemical rdf:resource="#Compound1a"/>
+        <ontoreaction:hasSolvent rdf:resource="#1_4Dioxane"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#Cyclopentenone3e"/>
+        <ontoreaction:hasYield rdf:resource="#Yield65Percent"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Input Chemicals -->
+    <ontoreaction:InputChemical rdf:about="#Ethylene2b">
+        <rdfs:label>Ethylene (2b)</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="#Compound1a">
+        <rdfs:label>Compound 1a</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Solvent Used -->
+    <ontoreaction:Solvent rdf:about="#1_4Dioxane">
+        <rdfs:label>1,4-dioxane</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <!-- Output Chemical -->
+    <ontoreaction:OutputChemical rdf:about="#Cyclopentenone3e">
+        <rdfs:label>Cyclopentenone 3e</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Yield Performance Indicator -->
+    <ontoreaction:Yield rdf:about="#Yield65Percent">
+        <rdfs:label>65% Yield</rdfs:label>
+    </ontoreaction:Yield>
+
+</rdf:RDF>
