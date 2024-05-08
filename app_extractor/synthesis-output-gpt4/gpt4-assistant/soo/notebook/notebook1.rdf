@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <!-- Material Instances -->
+    <owl:NamedIndividual rdf:about="#R1_Amine">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Amine (769-92-6)</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#R2_Sulfonyl_Cl">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Sulfonyl-Cl (98-59-9)</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#R3_Pyridine">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Pyridine (110-86-1)</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#S1_DCM">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>DCM (75-09-2)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Containers -->
+    <owl:NamedIndividual rdf:about="#Container_C1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#material_container"/>
+        <rdfs:label>10mL Glass Container C1 with Stir Bar</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Container_C2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#material_container"/>
+        <rdfs:label>20mL Glass Container C2</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Processes -->
+    <owl:NamedIndividual rdf:about="#Addition_R2_to_C1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#combining_materials"/>
+        <rdfs:label>Add Solid R2 to C1</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Add_S1_to_C1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#combining_materials"/>
+        <rdfs:label>Add S1 to C1</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Stirring_C1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#controlling_material_quality"/>
+        <rdfs:label>Stir contents of C1 at 500 rpm</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Add_R1_and_R3_to_C1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#combining_materials"/>
+        <rdfs:label>Add Liquid R1 and R3 to C1</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#Add_Acid_and_Water">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#combining_materials"/>
+        <rdfs:label>Add 1N HCl and Water to C1</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Separation_Organic_Aqueous">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating"/>
+        <rdfs:label>Decant/Separate Organic and Aqueous Layers</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Evaporation_C2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#transporting"/>
+        <rdfs:label>Evaporate volatiles from C2</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Purification_C2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating_by_solubility_difference"/>
+        <rdfs:label>Submit Contents of C2 to Purification</rdfs:label>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <!-- Chemical Reagents -->
+    <owl:NamedIndividual rdf:about="#R1_Triazolybenzenemethanol">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Triazolybenzenemethanol (143426-50-0) 1.0 eq</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#R2_TEMPO">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>TEMPO (2564-83-2) 0.2 eq</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#R3_BAIB">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>BAIB (3240-34-4) 2.25 eq</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#S1_DCM">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>DCM (75-09-2)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#S2_Water">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Water (7732-18-5)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Containers -->
+    <owl:NamedIndividual rdf:about="#MRV">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#material_container"/>
+        <rdfs:label>5mL MRV with stir bar</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#HRV1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#material_container"/>
+        <rdfs:label>20mL HRV</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#HRV2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#material_container"/>
+        <rdfs:label>20mL HRV</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Celite_Cartridge">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#material_container"/>
+        <rdfs:label>Celite Cartridge</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Processes -->
+    <owl:NamedIndividual rdf:about="#Combining_Reagents_in_MRV">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#combining_materials"/>
+        <rdfs:label>Add R1, R2, R3, S1, S2 to MRV according to steps</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Stirring_MRV">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#controlling_material_quality"/>
+        <rdfs:label>Stir at 500 rpm at room temperature in MRV</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Transfer_to_HRV_1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#transporting"/>
+        <rdfs:label>Pour contents from MRV to HRV1</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Evaporation_HRV">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#transporting"/>
+        <rdfs:label>Evaporate to dryness using mixed method on HRV1</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Filtration_Celite">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating_by_solubility_difference"/>
+        <rdfs:label>Pour from HRV1 to Celite Cartridge and collect in HRV2</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Final_Evaporation_HRV">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#transporting"/>
+        <rdfs:label>Evaporate to dryness using volatile method on HRV2</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Purification_ACC">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating"/>
+        <rdfs:label>Submit for ACC purification</rdfs:label>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
