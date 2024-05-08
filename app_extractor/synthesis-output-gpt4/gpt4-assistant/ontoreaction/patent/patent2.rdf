@@ -1,0 +1,71 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+    <!-- Reaction Experiment 1 -->
+    <ontoreaction:ReactionExperiment rdf:about="#ReactionExperiment1">
+        <ontoreaction:isOccurenceOf rdf:resource="#ChemicalReaction1"/>
+        <ontoreaction:hasInputChemical rdf:resource="#MethyleneChloride"/>
+        <ontoreaction:hasInputChemical rdf:resource="#Ethylenediamine"/>
+        <ontoreaction:hasInputChemical rdf:resource="#MethacrylicChloride"/>
+        <ontoreaction:hasRxnTemperature rdf:resource="#RoomTemperature"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#AminoethylmethacrylamideHydrochloride"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#StirringInIceBath"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Reaction Experiment 2 -->
+    <ontoreaction:ReactionExperiment rdf:about="#ReactionExperiment2">
+        <ontoreaction:isOccurenceOf rdf:resource="#ChemicalReaction2"/>
+        <ontoreaction:hasInputChemical rdf:resource="#IonExchangedWater"/>
+        <ontoreaction:hasInputChemical rdf:resource="#AminoethylmethacrylamideHydrochloride"/>
+        <ontoreaction:hasInputChemical rdf:resource="#AnionicSurfaceActiveAgent"/>
+        <ontoreaction:hasRxnTemperature rdf:resource="#HeatedTo50"/>
+        <ontoreaction:hasOutputChemical rdf:resource="#AminoethylmethacrylamideHydrochlorideMethylMethacrylateCopolymer"/>
+        <ontoreaction:hasSolvent rdf:resource="#Water"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Input Chemicals -->
+    <ontoreaction:InputChemical rdf:about="#MethyleneChloride"/>
+    <ontoreaction:InputChemical rdf:about="#Ethylenediamine"/>
+    <ontoreaction:InputChemical rdf:about="#MethacrylicChloride"/>
+    <ontoreaction:InputChemical rdf:about="#IonExchangedWater"/>
+    <ontoreaction:InputChemical rdf:about="#AminoethylmethacrylamideHydrochloride"/>
+    <ontoreaction:InputChemical rdf:about="#AnionicSurfaceActiveAgent"/>
+
+    <!-- Reaction Conditions -->
+    <ontoreaction:ReactionCondition rdf:about="#StirringInIceBath">
+        <rdfs:label>Stirred in an ice bath</rdfs:label>
+    </ontoreaction:ReactionCondition>
+    <ontoreaction:ReactionCondition rdf:about="#HeatedTo50">
+        <rdfs:label>Heated reaction up to 50 degrees Celsius</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <!-- Solvent -->
+    <ontoreaction:Solvent rdf:about="#Water"/>
+
+    <!-- Reaction Temperatures -->
+    <ontoreaction:ReactionTemperature rdf:about="#RoomTemperature">
+        <rdfs:label>Room Temperature</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+    <ontoreaction:ReactionTemperature rdf:about="#HeatedTo50">
+        <rdfs:label>50°C</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+
+    <!-- Output Chemical -->
+    <ontoreaction:OutputChemical rdf:about="#AminoethylmethacrylamideHydrochloride">
+        <rdfs:label>Aminoethylmethacrylamide hydrochloride</rdfs:label>
+    </ontoreaction:OutputChemical>
+    <ontoreaction:OutputChemical rdf:about="#AminoethylmethacrylamideHydrochlorideMethylMethacrylateCopolymer">
+        <rdfs:label>Aminoethylmethacrylamide hydrochloride/methyl methacrylate copolymer</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Chemical Reactions -->
+    <ontoreaction:ChemicalReaction rdf:about="#ChemicalReaction1"/>
+    <ontoreaction:ChemicalReaction rdf:about="#ChemicalReaction2"/>
+</rdf:RDF>

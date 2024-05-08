@@ -1,0 +1,84 @@
+<rdf:RDF xmlns="https://www.theworldavatar.com/kg/ontoreaction/"
+     xml:base="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    
+    <ontoreaction:ReactionExperiment rdf:about="#Reaction1">
+        <!-- Specifies the relation with the chemical reaction -->
+        <ontoreaction:isOccurenceOf rdf:resource="#ChemicalReaction1"/>
+        <!-- Specifies the conditions under which the reaction took place -->
+        <ontoreaction:hasReactionCondition rdf:resource="#SonicatedCondition"/>
+        <ontoreaction:hasReactionCondition rdf:resource="#StirredCondition"/>
+        <!-- Relation to the input chemicals -->
+        <ontoreaction:hasInputChemical rdf:resource="#PalladiumAcetate"/>
+        <ontoreaction:hasInputChemical rdf:resource="#BINAP"/>
+        <ontoreaction:hasInputChemical rdf:resource="#CesiumCarbonate"/>
+        <ontoreaction:hasInputChemical rdf:resource="#TwoBromoMethylpyrimidine"/>
+        <ontoreaction:hasInputChemical rdf:resource="#TertButylPiperazineCarboxylate"/>
+        <!-- Relation to catalysts -->
+        <ontoreaction:hasCatalyst rdf:resource="#PalladiumAcetate"/>
+        <ontoreaction:hasCatalyst rdf:resource="#BINAP"/>
+        <!-- Relation to solvent used in the reaction -->
+        <ontoreaction:hasSolvent rdf:resource="#AnhydrousDioxane"/>
+        <!-- Specifies the temperature condition -->
+        <ontoreaction:hasRxnTemperature rdf:resource="#ReactionTemperature110C"/>
+        <!-- Specifies the reaction output -->
+        <ontoreaction:hasOutputChemical rdf:resource="#BrownOilOutput"/>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Input Chemicals -->
+    <ontoreaction:InputChemical rdf:about="#PalladiumAcetate">
+        <rdfs:label>Palladium acetate</rdfs:label>
+    </ontoreaction:InputChemical>
+    <ontoreaction:InputChemical rdf:about="#BINAP">
+        <rdfs:label>BINAP</rdfs:label>
+    </ontoreaction:InputChemical>
+    <ontoreaction:InputChemical rdf:about="#CesiumCarbonate">
+        <rdfs:label>Cesium carbonate</rdfs:label>
+    </ontoreaction:InputChemical>
+    <ontoreaction:InputChemical rdf:about="#TwoBromoMethylpyrimidine">
+        <rdfs:label>2-Bromo-4-methylpyrimidine</rdfs:label>
+    </ontoreaction:InputChemical>
+    <ontoreaction:InputChemical rdf:about="#TertButylPiperazineCarboxylate">
+        <rdfs:label>tert-Butyl piperazine-1-carboxylate</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Reaction Conditions -->
+    <ontoreaction:ReactionCondition rdf:about="#SonicatedCondition">
+        <rdfs:label>Sonicated for 45 minutes under argon atmosphere</rdfs:label>
+    </ontoreaction:ReactionCondition>
+    <ontoreaction:ReactionCondition rdf:about="#StirredCondition">
+        <rdfs:label>Stirred at 110°C overnight</rdfs:label>
+    </ontoreaction:ReactionCondition>
+
+    <!-- Solvent -->
+    <ontoreaction:Solvent rdf:about="#AnhydrousDioxane">
+        <rdfs:label>Anhydrous 1,4-dioxane</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <!-- Reaction Temperature -->
+    <ontoreaction:ReactionTemperature rdf:about="#ReactionTemperature110C">
+        <rdfs:label>110°C</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+
+    <!-- Catalysts are also input chemicals -->
+    <!-- Catalyst -->
+    <ontoreaction:Catalyst rdf:about="#PalladiumAcetate" />
+    <ontoreaction:Catalyst rdf:about="#BINAP" />
+
+    <!-- Output of the Reaction -->
+    <ontoreaction:OutputChemical rdf:about="#BrownOilOutput">
+        <rdfs:label>Brown oil, yield: 43%</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Chemical Reaction Base -->
+    <ontoreaction:ChemicalReaction rdf:about="#ChemicalReaction1">
+        <!-- Further details about the reaction mechanism could be linked here -->
+    </ontoreaction:ChemicalReaction>
+
+</rdf:RDF>
