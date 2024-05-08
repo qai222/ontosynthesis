@@ -1,0 +1,20 @@
+The uploaded file is the complete specification of the Synthesis Operation Ontology (SOO) in OWL format. This ontology includes various classes and object properties associated with the processes and equipment used in material synthesis. Thoroughly understand the provided ontology.
+ 
+Refer to the text provided below as Context.
+
+Context: [insert-synthesis-reaction-text] 
+
+Now please provide an Answer to the Question below. 
+
+Question: Using the provided Synthesis Operation Ontology (SOO) above exclusively, can you generate the OWL instantiation of the text in Context? Ensure that your answer strictly uses the classes and object properties from the SOO, without introducing any additional elements. Strictly do not introduce any additional classes or properties that are not in SOO. The instantiation should be structured in as much detail and precision as possible based only on the SOO, formatted appropriately for OWL representation. Furthermore, do not provide output as an example. Provide an actual structured representation of the Context that fit the precise details and terms from the SOO provided above for accurate representation that I can simply import in my ontology management system
+
+Answer:
+
+
+
+
+
+Here is the complete specification of the Synthesis Operation Ontology (SOO) in OWL format.  This ontology includes various classes and object properties associated with the processes and equipment used in material synthesis. Thoroughly understand the provided ontology.
+
+
+Question: Using the provided Synthesis Operation Ontology (SOO) exclusively, can you generate the OWL instantiation of the text in Context? Ensure that your answer strictly uses the classes and object properties from the SOO, without introducing any additional elements. Strictly do not introduce any additional classes or properties that are not in SOO. The instantiation should be structured in as much detail and precision as possible based only on the SOO, formatted appropriately for OWL representation
