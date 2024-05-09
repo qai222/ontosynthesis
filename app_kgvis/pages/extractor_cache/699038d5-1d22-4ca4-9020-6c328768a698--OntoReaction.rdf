@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <!-- 
+    Instances of ChemicalReaction, InputChemical, and OutputChemical
+    -->
+
+    <ontoreaction:ChemicalReaction rdf:about="https://www.theworldavatar.com/kg/ontoreaction/AnodicOxidationOf2">
+        <rdfs:label>Anodic Oxidation of 2</rdfs:label>
+    </ontoreaction:ChemicalReaction>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Chemical2">
+        <rdfs:label>Chemical 2</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Monomer2m">
+        <rdfs:label>Monomer 2m</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- 
+    Linking the reaction experiment to the chemical reaction, input, and output
+    -->
+
+    <rdf:Description rdf:about="https://www.theworldavatar.com/kg/ontoreaction/AnodicOxidationExperiment">
+        <rdf:type rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionExperiment"/>
+        <rdfs:label>Anodic Oxidation Experiment of 2 under CV Conditions</rdfs:label>
+        <ontoreaction:isOccurenceOf rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/AnodicOxidationOf2"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Chemical2"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Monomer2m"/>
+    </rdf:Description>
+
+    <!-- 
+    Reaction Conditions (Temperature and CV conditions)
+    -->
+
+    <ontoreaction:ReactionTemperature rdf:about="https://www.theworldavatar.com/kg/ontoreaction/LowTemperature">
+        <rdfs:label>Low Temperature</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+
+    <rdf:Description rdf:about="https://www.theworldavatar.com/kg/ontoreaction/AnodicOxidationExperiment">
+        <ontoreaction:hasRxnTemperature rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/LowTemperature"/>
+    </rdf:Description>
+
+</rdf:RDF>

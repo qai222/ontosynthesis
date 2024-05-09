@@ -1,0 +1,60 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <!-- Instances of InputChemicals -->
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/PalladiumAcetate">
+        <rdfs:label xml:lang="en">Palladium acetate</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/BINAP">
+        <rdfs:label xml:lang="en">BINAP</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/CesiumCarbonate">
+        <rdfs:label xml:lang="en">Cesium carbonate</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/2Bromo4methylpyrimidine">
+        <rdfs:label xml:lang="en">2-Bromo-4-methylpyrimidine</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/TertButylPiperazine1Carboxylate">
+        <rdfs:label xml:lang="en">tert-Butyl piperazine-1-carboxylate</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Instance of Solvent -->
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/1_4Dioxane">
+        <rdfs:label xml:lang="en">1,4-Dioxane</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <!-- Instance of Catalyst -->
+    <ontoreaction:Catalyst rdf:about="https://www.theworldavatar.com/kg/ontoreaction/PalladiumAcetateCatalyst">
+        <rdfs:label xml:lang="en">Palladium acetate</rdfs:label>
+    </ontoreaction:Catalyst>
+
+    <!-- Instance of ReactionExperiment -->
+    <ontoreaction:ReactionExperiment rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Experiment1">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/PalladiumAcetate"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/BINAP"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/CesiumCarbonate"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/2Bromo4methylpyrimidine"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/TertButylPiperazine1Carboxylate"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/1_4Dioxane"/>
+        <ontoreaction:hasCatalyst rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/PalladiumAcetateCatalyst"/>
+        <ontoreaction:hasRxnTemperature rdf:datatype="xsd:double">110</ontoreaction:hasRxnTemperature>
+    </ontoreaction:ReactionExperiment>
+
+    <!-- Instance of OutputChemical -->
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/BrownOil">
+        <rdfs:label xml:lang="en">Brown oil</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Instance of Yield -->
+    <ontoreaction:Yield rdf:about="https://www.theworldavatar.com/kg/ontoreaction/YieldOfBrownOil">
+        <ontoreaction:yieldLimitingSpecies rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/BrownOil"/>
+        <rdfs:label xml:lang="en">43%</rdfs:label>
+    </ontoreaction:Yield>
+</rdf:RDF>
