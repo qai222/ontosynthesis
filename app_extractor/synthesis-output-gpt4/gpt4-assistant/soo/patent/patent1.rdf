@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO#"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Materials and Quantities -->
+    <owl:NamedIndividual rdf:about="#PalladiumAcetate">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#BINAP">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#CesiumCarbonate">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AnhydrousDioxane">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+    </owl:NamedIndividual>
+
+    <!-- Synthesis Operations -->
+    <owl:NamedIndividual rdf:about="#InitialSuspension">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#physical_process"/>
+        <SOO:has_part rdf:resource="#PalladiumAcetate"/>
+        <SOO:has_part rdf:resource="#BINAP"/>
+        <SOO:has_part rdf:resource="#CesiumCarbonate"/>
+        <SOO:has_part rdf:resource="#AnhydrousDioxane"/>
+        <SOO:is_environted_by rdf:resource="#ArgonEnvironment"/>
+        <SOO:is_realized_by rdf:resource="#Sonicator"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ArgonEnvironment">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#environment"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Sonicator">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#hardware_unit"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AdditionOfSolution">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <SOO:is_realized_by rdf:resource="#Stirrer"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Stirrer">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#hardware_unit"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FiltrationProcess">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating"/>
+        <SOO:is_realized_by rdf:resource="#FiltrationHardware"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FiltrationHardware">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#hardware_unit"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#EvaporationProcess">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating_by_volatility_difference"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ColumnChromatography">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating"/>
+        <SOO:is_realized_by rdf:resource="#ChromatographyColumn"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ChromatographyColumn">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#hardware_unit"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

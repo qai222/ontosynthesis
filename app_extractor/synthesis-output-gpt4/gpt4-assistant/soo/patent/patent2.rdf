@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+<!-- Define Materials -->
+<owl:NamedIndividual rdf:about="#MethyleneChloride">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+    <rdfs:label>100 parts of dry methylene chloride</rdfs:label>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ethylenediamine">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+    <rdfs:label>60 parts of ethylenediamine</rdfs:label>
+</owl:NamedIndividual>
+
+<!-- Mixing Operation -->
+<owl:NamedIndividual rdf:about="#InitialMixing">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#mixing"/>
+    <rdfs:label>Mixing in an ice bath using stirring blade</rdfs:label>
+    <SOO:has_material_input rdf:resource="#MethyleneChloride"/>
+    <SOO:has_material_input rdf:resource="#Ethylenediamine"/>
+</owl:NamedIndividual>
+
+<!-- Addition Operation -->
+<owl:NamedIndividual rdf:about="#AdditionOfMethacrylicChloride">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+    <rdfs:label>Slow addition of 105 parts of methacrylic chloride</rdfs:label>
+</owl:NamedIndividual>
+
+<!-- Reaction Operation -->
+<owl:NamedIndividual rdf:about="#RoomTemperatureReaction">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+    <rdfs:label>Reaction at room temperature for 5 hours</rdfs:label>
+</owl:NamedIndividual>
+
+<!-- Filtration and Washing -->
+<owl:NamedIndividual rdf:about="#FiltrationAndWashing">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating_by_solubility_difference"/>
+    <rdfs:label>Filtration and thorough washing with methylene chloride</rdfs:label>
+</owl:NamedIndividual>
+
+<!-- Polymer Formation -->
+<owl:NamedIndividual rdf:about="#PolymerFormation">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+    <rdfs:label>Formation of polymer particles and washing with water</rdfs:label>
+</owl:NamedIndividual>
+
+<!-- Amino Group Attachment -->
+<owl:NamedIndividual rdf:about="#AminoGroupAttachment">
+    <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+    <rdfs:label>Washing with 5% sodium hydroxide solution to attach amino groups</rdfs:label>
+</owl:NamedIndividual>
+
+</rdf:RDF>

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO#"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:SOO="http://www.ontosynthesis.org/SOO">
+
+    <!-- Individual Stocks -->
+    <owl:NamedIndividual rdf:about="#CopperCatalystStock">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Stock Solution 1 - Preparation of copper catalyst</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ReactionComponentsStock">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Stock Solution 2 - Preparation of other reaction components</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ActivatedAlcoholStock">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Stock Solution 3 - Preparation of activated alcohol</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Process of combining stocks -->
+    <owl:NamedIndividual rdf:about="#ChemicalReactionSetup">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#composite_material_process"/>
+        <rdfs:label>Combining multiple stocks for reaction</rdfs:label>
+        <SOO:has_part rdf:resource="#CopperCatalystStock"/>
+        <SOO:has_part rdf:resource="#ReactionComponentsStock"/>
+        <SOO:has_part rdf:resource="#ActivatedAlcoholStock"/>
+    </owl:NamedIndividual>
+
+    <!-- Procedure Steps -->
+    <owl:NamedIndividual rdf:about="#IrradiationProcess">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Irradiation using Blue LEDs</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FiltrationProcedure">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating"/>
+        <rdfs:label>Use of syringe filters for separating</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Final sample preparation for analysis -->
+    <owl:NamedIndividual rdf:about="#SamplePreparationForNMR">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Preparation of sample for 19F NMR analysis</rdfs:label>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

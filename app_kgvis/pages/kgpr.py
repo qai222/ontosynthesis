@@ -11,8 +11,8 @@ from ontosynthesis.visualize.cyto import STYLE_SHEET, load_owl, get_world_summar
 
 # page meta
 PAGE_ID_HEADER = "PR__"  # id header for components in this page
-PAGE_PATH = "/kgpr"  # relative url
-PAGE_DESCRIPTION = "KGPR"  # appears in navbar
+PAGE_PATH = "/kgr"  # relative url
+PAGE_DESCRIPTION = "KGR"  # appears in navbar
 DATA_FOLDER_RELATIVE = "../../examples/*/"
 WORLD_FILE_EXTENSION = ".owl"
 

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Chemical Ingredients -->
+    <owl:NamedIndividual rdf:about="#NaCl">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>NaCl 4.8 mmol, 281 mg</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#1_Bromonaphthalene">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>1-bromonaphtalene 4.8 mmol, 1.0 g</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Pd_PtBu3_2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Pd[P(t-Bu)3]2 0.12 mmol, 61.3 mg</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#DeionizedWater">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>5 mL Deionized Water</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Reaction Condition and Process -->
+    <owl:NamedIndividual rdf:about="#Initial_Mixing">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#physical_process"/>
+        <rdfs:label>Initial mixing in a 50 mL round-bottom flask at room temperature in air</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#ColorChange">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#physical_process"/>
+        <rdfs:label>Color change from slightly yellow to dark orange</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#AdditionOfNBuLi">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Addition of n-BuLi under argon with vigorous stirring, generating an emulsion</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Extraction">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating"/>
+        <rdfs:label>Extraction with Et2O</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FiltrationAndDrying">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#physical_process"/>
+        <rdfs:label>Filtration through Celite pad and drying under reduced pressure</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Purification -->
+    <owl:NamedIndividual rdf:about="#PurificationByChromatography">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#separating_by_solubility_difference"/>
+        <rdfs:label>Purification by column chromatography on silica gel</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Final Product -->
+    <owl:NamedIndividual rdf:about="#Product2aa">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Product 2aa, 99% yield, 883 mg</rdfs:label>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

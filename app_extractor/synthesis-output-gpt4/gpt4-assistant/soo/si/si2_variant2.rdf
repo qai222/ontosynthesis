@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO#"
+    xml:base="http://www.ontosynthesis.org/SOO"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:SOO="http://www.ontosynthesis.org/SOO#">
+
+    <!-- Stock Solutions -->
+    <owl:NamedIndividual rdf:about="#StockSolution1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#solution"/>
+        <rdfs:label>Stock Solution 1: Copper Catalyst</rdfs:label>
+        <SOO:describes rdf:resource="#Cu_terpy_Cl2"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StockSolution2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#solution"/>
+        <rdfs:label>Stock Solution 2: Photocatalyst, CF3 reagent, TBACl</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#StockSolution3">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#solution"/>
+        <rdfs:label>Stock Solution 3: Activated Alcohol and Quinuclidine</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Reagents -->
+    <owl:NamedIndividual rdf:about="#Cu_terpy_Cl2">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#reagent"/>
+        <rdfs:label>Cu(terpy)Cl2</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Chemical Reaction -->
+    <owl:NamedIndividual rdf:about="#ChemicalReaction">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Reaction combined from three stock solutions</rdfs:label>
+        <SOO:has_part rdf:resource="#StockSolution1"/>
+        <SOO:has_part rdf:resource="#StockSolution2"/>
+        <SOO:has_part rdf:resource="#StockSolution3"/>
+        <SOO:followed_by rdf:resource="#PostReactionProcessing"/>
+    </owl:NamedIndividual>
+
+    <!-- Post-Reaction Processing -->
+    <owl:NamedIndividual rdf:about="#PostReactionProcessing">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#physical_process"/>
+        <rdfs:label>Sparging with N2, Sealing, Irradiation with Blue LEDs</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Analysis -->
+    <owl:NamedIndividual rdf:about="#NMRAnalysis">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#analysis"/>
+        <rdfs:label>19F NMR Analysis</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>

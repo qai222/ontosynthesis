@@ -34,18 +34,27 @@ card_soo_viewer = get_card(
 )
 
 card_soo_repr = get_card(
-    title="KG Procedure Representation",
+    title="KG Representation",
     text="Knowledge graph representation for organic synthesis procedure.",
-    link_text="Procedure Graph",
-    link_path="/kgpr",
+    link_text="Representation",
+    link_path="/kgr",
+    width=20,
+)
+
+card_extractor = get_card(
+    title="Data Extraction",
+    text="Extract structured data based on a given ontology using LLMs.",
+    link_text="Extractor",
+    link_path="/extractor",
     width=20,
 )
 
 layout = dbc.Row(
     [dbc.Col(
         [
-            card_soo_viewer,
+            # card_soo_viewer,
             card_soo_repr,
+            card_extractor,
         ],
         className="justify-content-left col-8 d-flex mx-auto mt-5"
     ),

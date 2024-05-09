@@ -23,7 +23,7 @@ def get_navbar():
                 nl,
             ) for nl in nav_links
         ],
-        brand="ASPIRE EPV",
+        brand="Ontosynthesis",
         brand_href="/",
         color="#6f42c1",
         dark=True,
@@ -40,7 +40,7 @@ def create_dashapp(prefix="/"):
 
     app = Dash(
         name=__name__,
-        title="ASPIRE EPV",
+        title="Ontosynthesis",
         external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.FONT_AWESOME],
         use_pages=True,
         server=server,

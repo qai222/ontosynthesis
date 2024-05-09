@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontosynthesis.org/SOO"
+         xml:base="http://www.ontosynthesis.org/SOO"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <!-- Chemical Species and Monomers -->
+    <owl:NamedIndividual rdf:about="#Species_1">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Species 1</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Monomer_2m">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Monomer 2m</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#Intermediate_2_Prime">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#portion_of_material"/>
+        <rdfs:label>Intermediate 2'</rdfs:label>
+    </owl:NamedIndividual>
+
+    <!-- Electrochemical Process Description -->
+    <owl:NamedIndividual rdf:about="#AnodicOxidationProcess">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Anodic Oxidation of Species 1</rdfs:label>
+        <SOO:operates_on rdf:resource="#Species_1"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="#FormationOfMonomer2m">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#chemical_process"/>
+        <rdfs:label>Formation of Monomer 2m from Intermediate 2' via Second Oxidation Wave under CV conditions</rdfs:label>
+        <SOO:has_input rdf:resource="#Intermediate_2_Prime"/>
+        <SOO:has_output rdf:resource="#Monomer_2m"/>
+    </owl:NamedIndividual>
+
+    <!-- Environmental Conditions -->
+    <owl:NamedIndividual rdf:about="#CyclicVoltammetryCondition">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#environment"/>
+        <rdfs:label>Cyclic Voltammetry Conditions</rdfs:label>
+    </owl:NamedIndividual>
+    
+    <owl:NamedIndividual rdf:about="#LowTemperatureCondition">
+        <rdf:type rdf:resource="http://www.ontosynthesis.org/SOO#environment"/>
+        <rdfs:label>Low Temperature Conditions</rdfs:label>
+        <SOO:has_part rdf:resource="#FormationOfMonomer2m"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>
