@@ -21,11 +21,11 @@ DATA_SAMPLE_JSON = "../../app_extractor/data/data_hackathon.json"
 DATA_SAMPLE_JSON = os.path.join(THIS_DIR, DATA_SAMPLE_JSON)
 AVAILABLE_ONTOLOGIES = [
     "OntoReaction",
-    # "SOO"
+    "SOO"
 ]
 ONTOLOGY_FILE_PATHS = {
     "OntoReaction": os.path.join(THIS_DIR, "../../app_extractor/OntoReaction.owl"),
-    # "SOO": os.path.join(THIS_DIR, "../../app_extractor/soo.owl")
+    "SOO": os.path.join(THIS_DIR, "../../app_extractor/soo.owl")
 }
 # TODO finalize the ontologies we are acutally going to use
 
