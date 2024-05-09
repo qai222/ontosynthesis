@@ -13,12 +13,10 @@ random.shuffle(_color_list)
 
 
 def rdf_to_cyto_elements(rdf_file_path, ontology_file_path) -> tuple[list[dict], list[dict]]:
-    onto = get_ontology(ontology_file_path).load()
+    onto = get_ontology("file://"+ ontology_file_path).load()
     abox = Graph()
-    abox.parse(rdf_file_path)
+    abox.parse(rdf_file_path, format='application/rdf+xml')
 
-    cyto_nodes = dict()
-    cyto_edges = dict()
     node_data_props = defaultdict(dict)  # iri --> data properties
     node_class_dict = defaultdict(list)
 
@@ -116,7 +114,7 @@ def get_style_sheet(cyto_nodes):
             'style': {
                 'content': 'data(label)',
                 'border-width': 2,
-                'text-valign': 'center',
+                # 'text-valign': 'center',
                 'padding': "15px",
                 # 'width': 'label',
                 # 'height': '22px',

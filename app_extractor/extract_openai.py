@@ -1,5 +1,6 @@
 import re
 
+from loguru import logger
 from openai import OpenAI
 from openai.types.chat.chat_completion import ChatCompletion
 
@@ -790,9 +791,12 @@ SYSTEM_PROMPT_OntoReaction = """Read the complete specification of the Onto Reac
     <owl:Class rdf:about="https://www.theworldavatar.com/kg/ontovapourtec/VapourtecR4Reactor"/>
 </rdf:RDF>
 
-You are an assistant to structure user provided input text description in OWL/RDF format using the provided ontoreaction ontology above exclusively. You need to generate the OWL instantiation of the text provided by the user. You are strictly instructed to not introduce any hypothetical classes or properties that are not in the ontoreaction ontology specification above. You are strictly also instructed to not assume existence of properties or classes not in the given ontoreaction specification. Simply structure the input from the user with the ontoreaction ontology above, formatted appropriately for OWL representation. Furthermore, do not provide output as an example. Provide an actual structured representation of the text from the user that fit the precise details and terms from the ontoreaction ontology provided for accurate representation that the user can simply import in their ontology management system."""
+You are an assistant to structure user provided input text description in OWL/RDF format using the provided ontoreaction ontology above exclusively. You need to generate the OWL instantiation of the text provided by the user. You are strictly instructed to not introduce any hypothetical classes or properties that are not in the ontoreaction ontology specification above. You are strictly also instructed to not assume existence of properties or classes not in the given ontoreaction specification. Simply structure the input from the user with the ontoreaction ontology above, formatted appropriately for OWL representation. Furthermore, do not provide output as an example. Provide an actual structured representation of the text from the user that fit the precise details and terms from the ontoreaction ontology provided for accurate representation that the user can simply import in their ontology management system. The output should be in RDF format inside one xml code block."""
 
-SYSTEM_PROMPTS = {"OntoReaction": SYSTEM_PROMPT_OntoReaction}
+SYSTEM_PROMPTS = {
+    "OntoReaction": SYSTEM_PROMPT_OntoReaction,
+
+}
 
 
 def extract_openai(
@@ -814,10 +818,11 @@ def extract_openai(
             {"role": "user", "content": unstructured_data.text}
         ],
         temperature=0,
-        top_p=0.1,
+        top_p=0.5,
     )
     completion: ChatCompletion
     content = completion.choices[0].message.content
+    logger.info(f"completion:\n{content}")
     assert "```xml\n" in content, "xml code block not found in the completion!"
     assert content.count("```") == 2, "there should be only one complete code block"
 

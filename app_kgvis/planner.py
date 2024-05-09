@@ -62,7 +62,8 @@ def create_dashapp(prefix="/"):
             content,
         ],
         # trick from https://stackoverflow.com/questions/35513264
-        style={"width": "100vw"}
+        # style={"width": "100vw"}
+        # style={'height': 'calc(100vh - 100px)'},  # minus header bar height
     )
     return app
 
