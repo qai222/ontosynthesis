@@ -3,5 +3,6 @@ owlready2
 pandas
 dash_cytoscape
 dash_bootstrap_components
+dash_renderjson
 networkx
 pydantic
