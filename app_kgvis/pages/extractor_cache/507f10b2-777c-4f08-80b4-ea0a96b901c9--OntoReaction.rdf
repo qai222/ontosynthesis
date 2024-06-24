@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <ontoreaction:ReactionExperiment rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Experiment1">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/CopperCatalyst"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Photocatalyst"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/CF3Reagent"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/TBACl"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ActivatedAlcohol"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Quinuclidine"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionProduct"/>
+        <ontoreaction:hasCatalyst rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/CopperCatalyst"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/THF"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/DMSO"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperature"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionPressure"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionScale"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime"/>
+        <ontoreaction:isOccurenceOf rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ChemicalReaction"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/CopperCatalyst"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Photocatalyst"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/CF3Reagent"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/TBACl"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ActivatedAlcohol"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Quinuclidine"/>
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionProduct"/>
+    <ontoreaction:Catalyst rdf:about="https://www.theworldavatar.com/kg/ontoreaction/CopperCatalyst"/>
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/THF"/>
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/DMSO"/>
+    <ontoreaction:ReactionTemperature rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperature"/>
+    <ontoreaction:ReactionPressure rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionPressure"/>
+    <ontoreaction:ReactionScale rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionScale"/>
+    <ontoreaction:ResidenceTime rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime"/>
+    <ontoreaction:ChemicalReaction rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ChemicalReaction"/>
+</rdf:RDF>

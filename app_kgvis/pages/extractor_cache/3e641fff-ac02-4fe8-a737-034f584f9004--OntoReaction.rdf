@@ -1,0 +1,45 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <!-- Instances of InputChemicals -->
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Amine">
+        <rdfs:label>Amine</rdfs:label>
+        <ontoreaction:hasCASRegistryNumber rdf:datatype="xsd:string">769-92-6</ontoreaction:hasCASRegistryNumber>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Sulfonyl-Cl">
+        <rdfs:label>Sulfonyl-Cl</rdfs:label>
+        <ontoreaction:hasCASRegistryNumber rdf:datatype="xsd:string">98-59-9</ontoreaction:hasCASRegistryNumber>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Pyridine">
+        <rdfs:label>Pyridine</rdfs:label>
+        <ontoreaction:hasCASRegistryNumber rdf:datatype="xsd:string">110-86-1</ontoreaction:hasCASRegistryNumber>
+    </ontoreaction:InputChemical>
+
+    <!-- Instance of Solvent -->
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/DCM">
+        <rdfs:label>DCM (Dichloromethane)</rdfs:label>
+        <ontoreaction:hasCASRegistryNumber rdf:datatype="xsd:string">75-09-2</ontoreaction:hasCASRegistryNumber>
+    </ontoreaction:Solvent>
+
+    <!-- Instance of TargetProduct -->
+    <ontoreaction:TargetProduct rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Sulfonamide">
+        <rdfs:label>Sulfonamide</rdfs:label>
+        <ontoreaction:hasCASRegistryNumber rdf:datatype="xsd:string">697786-47-3</ontoreaction:hasCASRegistryNumber>
+    </ontoreaction:TargetProduct>
+
+    <!-- Instance of ReactionExperiment -->
+    <ontoreaction:ReactionExperiment rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Experiment1">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Amine"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Sulfonyl-Cl"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Pyridine"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/DCM"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Sulfonamide"/>
+        <ontoreaction:hasReactionScale rdf:datatype="xsd:double">0.2</ontoreaction:hasReactionScale>
+        <ontoreaction:hasReactionScaleUnit rdf:datatype="xsd:string">mmol</ontoreaction:hasReactionScaleUnit>
+    </ontoreaction:ReactionExperiment>
+</rdf:RDF>

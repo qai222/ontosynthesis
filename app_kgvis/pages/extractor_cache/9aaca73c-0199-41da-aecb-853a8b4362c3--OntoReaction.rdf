@@ -1,0 +1,49 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <!-- Instances of ChemicalReaction -->
+    <ontoreaction:ChemicalReaction rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ethyleneReactionWith1a">
+        <rdfs:label xml:lang="en">Reaction of ethylene with 1a</rdfs:label>
+    </ontoreaction:ChemicalReaction>
+
+    <!-- Instances of InputChemical -->
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ethylene">
+        <rdfs:label xml:lang="en">Ethylene</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/chemical1a">
+        <rdfs:label xml:lang="en">Chemical 1a</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <!-- Instance of Solvent -->
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/1_4-dioxane">
+        <rdfs:label xml:lang="en">1,4-Dioxane</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <!-- Instance of OutputChemical -->
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/cyclopentenone3e">
+        <rdfs:label xml:lang="en">Cyclopentenone 3e</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <!-- Instance of Yield -->
+    <ontoreaction:Yield rdf:about="https://www.theworldavatar.com/kg/ontoreaction/yieldOfCyclopentenone3e">
+        <rdfs:label xml:lang="en">65% Yield of Cyclopentenone 3e</rdfs:label>
+        <ontoreaction:yieldLimitingSpecies rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/cyclopentenone3e"/>
+    </ontoreaction:Yield>
+
+    <!-- Object Property Assertions -->
+    <rdf:Description rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ethyleneReactionWith1a">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ethylene"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/chemical1a"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/cyclopentenone3e"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/1_4-dioxane"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="https://www.theworldavatar.com/kg/ontoreaction/cyclopentenone3e">
+        <ontoreaction:hasYield rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/yieldOfCyclopentenone3e"/>
+    </rdf:Description>
+
+</rdf:RDF>

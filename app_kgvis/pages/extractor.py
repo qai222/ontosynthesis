@@ -6,35 +6,31 @@ import dash_renderjson
 from dash import html, get_app, Input, Output, no_update, State
 from dash import register_page, dcc
 
-from ontosynthesis.visualize.cyto import STYLE_SHEET, JsonTheme
-
-_DUMMY_OWL_STRING = """
-<owl:NamedIndividual rdf:about="#c2f9d1e9-6aaf-4532-8b44-c011b3554b9f">
-  <rdf:type rdf:resource="#SOO_0000304"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c2f9d1e9-6aaf-4532-8b44-c011b3554b9f</rdfs:label>
-  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "c2f9d1e9-6aaf-4532-8b44-c011b3554b9f", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}</has_value_functional>
-</owl:NamedIndividual>
-
-<owl:NamedIndividual rdf:about="#c9a7758c-8e26-485a-a95b-55e03e73c3fa">
-  <rdf:type rdf:resource="#SOO_0000078"/>
-  <SOO_0000027 rdf:resource="#c2f9d1e9-6aaf-4532-8b44-c011b3554b9f"/>
-  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">c9a7758c-8e26-485a-a95b-55e03e73c3fa</rdfs:label>
-  <has_value_functional rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{"identifier": "c9a7758c-8e26-485a-a95b-55e03e73c3fa", "composition": {"chemical label: S3": {"amount_unit": "mL", "amount_value": 1000.0, "details": ""}}, "state_of_matter": ["LIQUID"], "is_contained_by": {"identifier": "c2f9d1e9-6aaf-4532-8b44-c011b3554b9f", "made_of": "glass", "max_capacity": {"amount_unit": "mL", "amount_value": 5000.0, "details": ""}}}</has_value_functional>
-</owl:NamedIndividual>
-"""
+from app_extractor.data.data_dump import METER
+from app_extractor.extract_openai import extract_openai
+from app_extractor.rdf_to_cyto import rdf_to_cyto
+from ontosynthesis.visualize.cyto import JsonTheme
 
 # page meta
+THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+EXTRACTOR_CACHE_FOLDER = os.path.join(THIS_DIR, "extractor_cache")
 PAGE_ID_HEADER = "EXTRACTOR__"  # id header for components in this page
 PAGE_PATH = "/extractor"  # relative url
 PAGE_DESCRIPTION = "Extractor"  # appears in navbar
 DATA_SAMPLE_JSON = "../../app_extractor/data/data_hackathon.json"
-AVAILABLE_ONTOLOGIES = ["SOO", "ORD", ]
+DATA_SAMPLE_JSON = os.path.join(THIS_DIR, DATA_SAMPLE_JSON)
+AVAILABLE_ONTOLOGIES = [
+    "OntoReaction",
+    "SOO"
+]
+ONTOLOGY_FILE_PATHS = {
+    "OntoReaction": os.path.join(THIS_DIR, "../../app_extractor/OntoReaction.owl"),
+    "SOO": os.path.join(THIS_DIR, "../../app_extractor/soo.owl")
+}
 # TODO finalize the ontologies we are acutally going to use
 
 # page setup
 app = get_app()
-THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_SAMPLE_JSON = os.path.join(THIS_DIR, DATA_SAMPLE_JSON)
 register_page(__name__, path=PAGE_PATH, description=PAGE_DESCRIPTION)
 cyto.load_extra_layouts()
 from app_extractor.data.data_dump import UnstructuredReactionDescription
@@ -42,15 +38,29 @@ from ontosynthesis.utils import json_load
 
 DATA_SAMPLES = json_load(DATA_SAMPLE_JSON)
 DATA_SAMPLES = [UnstructuredReactionDescription(**d) for d in DATA_SAMPLES]
+TEXT_TO_SAMPLE_ID = {d.text.strip(): d.identifier for d in DATA_SAMPLES}
 DATA_SAMPLES = {d.identifier: d for d in DATA_SAMPLES}
 
 # page components
 #### first column
 COMPONENT_ID_ontology_selector = f"{PAGE_ID_HEADER}ONTOLOGY_SELECTOR"
-component_ontology_selector = dcc.Dropdown(
-    options=AVAILABLE_ONTOLOGIES,
-    value=AVAILABLE_ONTOLOGIES[0],
-    id=COMPONENT_ID_ontology_selector,
+component_ontology_selector = dbc.InputGroup(
+    [
+        dbc.InputGroupText("Target Ontology"),
+        dbc.Select(
+            options=AVAILABLE_ONTOLOGIES,
+            value=AVAILABLE_ONTOLOGIES[0],
+            id=COMPONENT_ID_ontology_selector,
+        ),
+    ]
+)
+
+COMPONENT_ID_apikey_input = f"{PAGE_ID_HEADER}APIKEY_INPUT"
+component_apikey_input = dbc.InputGroup(
+    [
+        dbc.InputGroupText("API Key"),
+        dbc.Input(id=COMPONENT_ID_apikey_input, type="password"),
+    ], className="mt-2"
 )
 COMPONENT_ID_sample_text_selector = f"{PAGE_ID_HEADER}SAMPLE_TEXT_SELECTOR"
 component_sample_text_selector = dcc.Dropdown(
@@ -65,48 +75,38 @@ component_sample_text_box = dbc.Textarea(
     placeholder="Select a sample or start typing...",
     className="mt-2 h-50",
 )
+COMPONENT_ID_sample_text_tags = f"{PAGE_ID_HEADER}SAMPLE_TEXT_TAGS"
+component_sample_text_tags = html.Div(id=COMPONENT_ID_sample_text_tags)
+
 COMPONENT_ID_extract_button = f"{PAGE_ID_HEADER}EXTRACT_BUTTON"
-# TODO add display for reaction complexity and specificity
+
 FIRST_COLUMN = html.Div(
     [
-        html.H5(f"Target Ontology", className="text-center mt-3"),
+        html.H5(f"Extraction Input", className="text-center mt-3"),
         component_ontology_selector,
+        component_apikey_input,
         html.H5(f"Unstructured Text", className="text-center mt-3"),
         component_sample_text_selector,
         component_sample_text_box,
         html.Div(
-            children=[dbc.Button("Extract", id=COMPONENT_ID_extract_button, className="mt-2")],
+            children=[dbc.Button("Extract", id=COMPONENT_ID_extract_button, className="mt-3")],
             className="d-grid gap-2"
         ),
+        component_sample_text_tags,
     ],
-    className="col-lg-4 px-2 overflow-auto",
+    className="col-3 px-2 overflow-auto",
     style={'height': 'calc(100vh - 100px)'},  # minus header bar height
 )
 
 #### second column
-COMPONENT_ID_output_box = f"{PAGE_ID_HEADER}OUTPUT_BOX"
-component_output_box = dcc.Markdown(
-    id=COMPONENT_ID_output_box,
-    className="mt-2",
-)
-SECOND_COLUMN = html.Div(
-    [
-        html.H5(f"Extraction Output", className="text-center mt-3"),
-        component_output_box,
-    ],
-    # className="col-lg-4 px-2 overflow-auto border border-primary",
-    className="col-lg-4 px-2 overflow-auto",
-    style={'height': 'calc(100vh - 100px)'},  # minus header bar height
-)
-
-#### third column
 COMPONENT_ID_cyto = f"{PAGE_ID_HEADER}CYTO"
 component_cyto = cyto.Cytoscape(
     id=COMPONENT_ID_cyto,
     layout={
-        'name': 'dagre',
+        # 'name': 'dagre',
+        'name': 'cose',
         'nodeDimensionsIncludeLabels': True,
-        'animate': True,
+        'animate': False,
         'animationDuration': 1000,
         'rankDir': 'LR',
         'align': 'UL',
@@ -115,60 +115,156 @@ component_cyto = cyto.Cytoscape(
         'width': '100%',
         'height': '100%'
     },
-    stylesheet=STYLE_SHEET,
     responsive=True,
 )
 COMPONENT_ID_cyto_selection_display = f"{PAGE_ID_HEADER}CYTO_SELECTION_DISPLAY"
-component_cyto_selection_display = dash_renderjson.DashRenderjson(data={}, max_depth=-1, theme=JsonTheme,
-                                                                  invert_theme=True)
+component_cyto_selection_display = html.Div(id=COMPONENT_ID_cyto_selection_display, className="overflow-auto")
+
+SECOND_COLUMN = html.Div(
+    [
+        html.H5(f"Extracted KG", className="text-center mt-3"),
+        html.Div(
+            [
+                html.Div(component_cyto, className="h-75 border border-success"),
+                html.Div(component_cyto_selection_display,
+                         className="h-25 overflow-auto border border-primary mt-3 px-2"),
+            ], style={"height": "calc(100vh - 200px)"}
+        )
+    ],
+    className="col-4 px-2 overflow-auto",
+    style={'height': 'calc(100vh - 100px)'},  # minus header bar height
+)
+
+#### third column
+COMPONENT_ID_output_box = f"{PAGE_ID_HEADER}OUTPUT_BOX"
+component_output_box = html.Div(
+    id=COMPONENT_ID_output_box,
+    className="mt-2 border border-secondary overflow-auto",
+    style={"height": "calc(100vh - 184px)"},
+)
 
 THIRD_COLUMN = html.Div(
     [
-        html.Div(component_cyto, className="h-75 border-primary border"),
-        html.Div(component_cyto_selection_display, className="h-25 border-primary border")
+        html.H5(f"Extracted RDF", className="text-center mt-3"),
+        component_output_box,
     ],
     # className="col-lg-4 px-2 overflow-auto border border-primary",
-    className="col-lg-4 px-2 overflow-auto",
+    className="col-5 px-2 overflow-auto",
     style={'height': 'calc(100vh - 100px)'},  # minus header bar height
 )
 
 # page layout
 layout = html.Div(
-    [dbc.Row([FIRST_COLUMN, SECOND_COLUMN, THIRD_COLUMN, ])],
-    style={"width": "calc(100vw - 100px)"}
+    [
+        dbc.Row(
+            [
+                FIRST_COLUMN,
+                SECOND_COLUMN,
+                THIRD_COLUMN,
+            ],
+            # style={"width": "100%", "height": "100%"}
+        )
+    ],
+    # className="container",
+    style={
+        "width": "calc(100vw - 100px)",
+    }
 )
 
 
+# util functions
+def extract_call(
+        unstructured_data: UnstructuredReactionDescription,
+        api_key: str, ontology_name="OntoReaction") -> tuple[str, str]:
+    cached_rdf = f"{unstructured_data.identifier}--{ontology_name}.rdf"
+    cached_rdf = os.path.join(EXTRACTOR_CACHE_FOLDER, cached_rdf)
+    # TODO this is cache by identifier, better hook up to a database
+    if os.path.isfile(cached_rdf) and os.path.getsize(cached_rdf) > 0:
+        with open(cached_rdf, "r") as f:
+            s = f.read()
+        return cached_rdf, s
+    else:
+        rdf_string = extract_openai(unstructured_data, api_key=api_key, ontology_name=ontology_name)
+        with open(cached_rdf, "w") as f:
+            f.write(rdf_string.strip())
+        return cached_rdf, rdf_string
+
+
+def get_tag_badges(data: UnstructuredReactionDescription):
+    color_table = {
+        METER.LOW.value: "success",
+        METER.MEDIUM.value: "warning",
+        METER.HIGH.value: "danger",
+    }
+    try:
+        complexity_color = color_table[data.complexity.value]
+    except AttributeError:
+        complexity_color = "secondary"
+    try:
+        specificity_color = color_table[data.specificity.value]
+    except AttributeError:
+        specificity_color = "secondary"
+    badges = [
+        dbc.Badge(f"Complexity: {data.complexity}", color=complexity_color, className="me-1 mt-2"),
+        dbc.Badge(f"Specificity: {data.specificity}", color=specificity_color, className="me-1 mt-2"),
+        dbc.Badge(f"Origin: {data.origin}", color="secondary", className="me-1 mt-2"),
+    ]
+    return html.H4(badges)
+
+
+# Callback functions
 @app.callback(
     Output(COMPONENT_ID_sample_text_box, 'value'),
+    Output(COMPONENT_ID_sample_text_tags, 'children'),
     Input(COMPONENT_ID_sample_text_selector, 'value'),
 )
 def display_sample(sample_text_id):
     if sample_text_id in DATA_SAMPLES:
         data = DATA_SAMPLES[sample_text_id]
     else:
-        data = UnstructuredReactionDescription(text="", origin="")
-    return data.text
+        data = UnstructuredReactionDescription(text="", origin="user provided")
+    return data.text, get_tag_badges(data)
 
 
 @app.callback(
     Output(COMPONENT_ID_output_box, 'children'),
     Output(COMPONENT_ID_cyto, 'elements'),
+    Output(COMPONENT_ID_cyto, 'stylesheet'),
     State(COMPONENT_ID_sample_text_box, 'value'),
     State(COMPONENT_ID_ontology_selector, 'value'),
+    State(COMPONENT_ID_apikey_input, 'value'),
     Input(COMPONENT_ID_extract_button, 'n_clicks')
 )
-def run_extract(unstructured_text, ontology_name, n_clicks):
+def run_extract(unstructured_text, ontology_name, api_key, n_clicks):
     if n_clicks:
-        syntax = "xml"
-        structured_output = _DUMMY_OWL_STRING
-        # TODO implement actual extraction from `unstructured_text` given an `ontology_name` (T-box)
-        display = f'''
-```{syntax}
-{structured_output}
+        try:
+            unstructured = DATA_SAMPLES[TEXT_TO_SAMPLE_ID[unstructured_text.strip()]]
+        except KeyError:
+            unstructured = UnstructuredReactionDescription(text=unstructured_text, origin="user provided")
+        rdf_file_path, rdf_file_content = extract_call(unstructured, api_key=api_key, ontology_name=ontology_name)
+        display_text = f'''
+```xml
+{rdf_file_content}
 ```
         '''
-        # TODO get A-box from structured output
-        # TODO get cytoscape elements for A-box
-        return display, []
+        cyto_data = rdf_to_cyto(rdf_file_path, ONTOLOGY_FILE_PATHS[ontology_name])
+        display = dcc.Markdown(display_text, id=str(hash(display_text)),
+                               className="overflow-auto")  # magic to deal with highlight js bug
+        return display, cyto_data['nodes'] + cyto_data['edges'], cyto_data['style']
     return no_update
+
+
+@app.callback(Output(COMPONENT_ID_cyto_selection_display, 'children'),
+              Input(COMPONENT_ID_cyto, 'selectedNodeData'),
+              Input(COMPONENT_ID_cyto, 'selectedEdgeData'),
+              )
+def display_selected(node_data_list, edge_data_list):
+    if not node_data_list:
+        node_data_list = []
+    if not edge_data_list:
+        edge_data_list = []
+    data_list = node_data_list + edge_data_list
+    if not data_list:
+        return []
+    data = data_list[-1]
+    return dash_renderjson.DashRenderjson(data=data, max_depth=-1, theme=JsonTheme, invert_theme=True)

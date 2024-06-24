@@ -1,0 +1,54 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <ontoreaction:ReactionExperiment rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Experiment1">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/MethyleneChloride"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Ethylenediamine"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/MethacrylicChloride"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/AminoethylmethacrylamideHydrochloride"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperatureRoom"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime5Hours"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/MethyleneChloride"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Ethylenediamine"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/MethacrylicChloride"/>
+
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/AminoethylmethacrylamideHydrochloride"/>
+
+    <ontoreaction:ReactionTemperature rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperatureRoom">
+        <rdfs:label rdf:datatype="xsd:string">Room Temperature</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+
+    <ontoreaction:ResidenceTime rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime5Hours">
+        <rdfs:label rdf:datatype="xsd:string">5 Hours</rdfs:label>
+    </ontoreaction:ResidenceTime>
+
+    <ontoreaction:ReactionExperiment rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Experiment2">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/Water"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/AminoethylmethacrylamideHydrochloride"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/AnionicSurfaceActiveAgent"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/MethylMethacrylate"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/AminoethylmethacrylamideHydrochlorideMethylMethacrylateCopolymer"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperature50C"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime24Hours"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Water"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/AnionicSurfaceActiveAgent"/>
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/MethylMethacrylate"/>
+
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/AminoethylmethacrylamideHydrochlorideMethylMethacrylateCopolymer"/>
+
+    <ontoreaction:ReactionTemperature rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperature50C">
+        <rdfs:label rdf:datatype="xsd:string">50 Celsius</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+
+    <ontoreaction:ResidenceTime rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime24Hours">
+        <rdfs:label rdf:datatype="xsd:string">24 Hours</rdfs:label>
+    </ontoreaction:ResidenceTime>
+
+</rdf:RDF>

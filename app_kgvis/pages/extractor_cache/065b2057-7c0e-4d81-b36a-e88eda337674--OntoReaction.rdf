@@ -1,0 +1,60 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:ontoreaction="https://www.theworldavatar.com/kg/ontoreaction/">
+
+    <ontoreaction:ReactionExperiment rdf:about="https://www.theworldavatar.com/kg/ontoreaction/Experiment1">
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/R1"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/R2"/>
+        <ontoreaction:hasInputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/R3"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/S1"/>
+        <ontoreaction:hasSolvent rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/S2"/>
+        <ontoreaction:hasOutputChemical rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/P"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionScale"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/StoichiometryRatio"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperature"/>
+        <ontoreaction:hasReactionCondition rdf:resource="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime"/>
+    </ontoreaction:ReactionExperiment>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/R1">
+        <rdfs:label xml:lang="en">triazolybenzenemethanol</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/R2">
+        <rdfs:label xml:lang="en">TEMPO</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:InputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/R3">
+        <rdfs:label xml:lang="en">BAIB</rdfs:label>
+    </ontoreaction:InputChemical>
+
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/S1">
+        <rdfs:label xml:lang="en">DCM</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:Solvent rdf:about="https://www.theworldavatar.com/kg/ontoreaction/S2">
+        <rdfs:label xml:lang="en">Water</rdfs:label>
+    </ontoreaction:Solvent>
+
+    <ontoreaction:OutputChemical rdf:about="https://www.theworldavatar.com/kg/ontoreaction/P">
+        <rdfs:label xml:lang="en">Acid</rdfs:label>
+    </ontoreaction:OutputChemical>
+
+    <ontoreaction:ReactionScale rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionScale">
+        <rdfs:label xml:lang="en">0.2 mmol limiting reactant</rdfs:label>
+    </ontoreaction:ReactionScale>
+
+    <ontoreaction:StoichiometryRatio rdf:about="https://www.theworldavatar.com/kg/ontoreaction/StoichiometryRatio">
+        <rdfs:label xml:lang="en">1:1</rdfs:label>
+    </ontoreaction:StoichiometryRatio>
+
+    <ontoreaction:ReactionTemperature rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ReactionTemperature">
+        <rdfs:label xml:lang="en">Room temperature</rdfs:label>
+    </ontoreaction:ReactionTemperature>
+
+    <ontoreaction:ResidenceTime rdf:about="https://www.theworldavatar.com/kg/ontoreaction/ResidenceTime">
+        <rdfs:label xml:lang="en">24 hours</rdfs:label>
+    </ontoreaction:ResidenceTime>
+
+</rdf:RDF>
