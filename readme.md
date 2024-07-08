@@ -21,3 +21,26 @@ This project was proposed in the [2nd LLM Hackathon for Applications in Material
 During this two-day event we developed an app to extract information as RDF graphs from unstructured synthesis descriptions from a variety of sources including patents, scholarly articles, and lab notebooks.
 Our submission was recognized by a runner-up prize thanks to the event sponsor [Reincarnate](https://www.linkedin.com/company/reincarnateai/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3B60KP7hB9TTW4CnuJacl1Og%3D%3D).
 
+#### prompt template
+The System prompt template is shown in the following snippet with fillable fields defined between chevrons.
+This is now hard coded in [app_extractor/extract_openai.py](app_extractor/extract_openai.py)
+```manpage
+Read the complete specification of the <name of the ontology> ontology in OWL format specified below. Thoroughly understand and remember the provided ontology exactly.
+
+<OWL definition of the ontology>
+
+You are an assistant to structure user provided input text description in OWL/RDF format using the provided ontoreaction ontology above exclusively. You need to generate the OWL instantiation of the text provided by the user. You are strictly instructed to not introduce any hypothetical classes or properties that are not in the ontoreaction ontology specification above. You are strictly also instructed to not assume existence of properties or classes not in the given ontoreaction specification. Simply structure the input from the user with the ontoreaction ontology above, formatted appropriately for OWL representation. Furthermore, do not provide output as an example. Provide an actual structured representation of the text from the user that fit the precise details and terms from the ontoreaction ontology provided for accurate representation that the user can simply import in their ontology management system. The output should be in RDF format inside one xml code block.
+```
+#### test cases
+Test cases are collected in [app_extractor/data/data_hackathon.json](app_extractor/data/data_hackathon.json).
+
+| Test case | Writing style          | Complexity | Specificity |
+|-----------|------------------------|------------|-------------|
+| 1         | Patent                 | Low        | Medium      |
+| 2         | Patent                 | Low        | High        |
+| 3         | Journal article        | Low        | Low         |
+| 4         | Journal article        | Medium     | Low         |
+| 5         | Supporting information | Medium     | High        |
+| 6         | Supporting information | High       | High        |
+| 7         | Lab notebook           | Low        | High        |
+| 8         | Lab notebook           | Low        | High        |
