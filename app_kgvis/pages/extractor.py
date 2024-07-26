@@ -94,8 +94,8 @@ FIRST_COLUMN = html.Div(
         ),
         component_sample_text_tags,
     ],
-    className="col-3 px-2 overflow-auto",
-    style={'height': 'calc(100vh - 100px)'},  # minus header bar height
+    className="col-5 px-2",
+    style={'height': 'calc(100vh - 200px)'},  # minus header bar height
 )
 
 #### second column
@@ -120,27 +120,13 @@ component_cyto = cyto.Cytoscape(
 COMPONENT_ID_cyto_selection_display = f"{PAGE_ID_HEADER}CYTO_SELECTION_DISPLAY"
 component_cyto_selection_display = html.Div(id=COMPONENT_ID_cyto_selection_display, className="overflow-auto")
 
-SECOND_COLUMN = html.Div(
-    [
-        html.H5(f"Extracted KG", className="text-center mt-3"),
-        html.Div(
-            [
-                html.Div(component_cyto, className="h-75 border border-success"),
-                html.Div(component_cyto_selection_display,
-                         className="h-25 overflow-auto border border-primary mt-3 px-2"),
-            ], style={"height": "calc(100vh - 200px)"}
-        )
-    ],
-    className="col-4 px-2 overflow-auto",
-    style={'height': 'calc(100vh - 100px)'},  # minus header bar height
-)
 
 #### third column
 COMPONENT_ID_output_box = f"{PAGE_ID_HEADER}OUTPUT_BOX"
 component_output_box = html.Div(
     id=COMPONENT_ID_output_box,
-    className="mt-2 border border-secondary overflow-auto",
-    style={"height": "calc(100vh - 184px)"},
+    className="mt-2 border border-secondary overflow-auto h-25",
+    # style={"height": "calc(100vh - 184px)"},
 )
 
 THIRD_COLUMN = html.Div(
@@ -153,6 +139,24 @@ THIRD_COLUMN = html.Div(
     style={'height': 'calc(100vh - 100px)'},  # minus header bar height
 )
 
+
+
+SECOND_COLUMN = html.Div(
+    [
+        html.H5(f"Extracted KG", className="text-center mt-3"),
+        html.Div(
+            [
+                html.Div(component_cyto, className="h-75 border border-success"),
+                # html.Div(component_cyto_selection_display,
+                #          className="h-25 overflow-auto border border-primary mt-3 px-2"),
+                component_output_box,
+            ], style={"height": "calc(100vh - 200px)"}
+        )
+    ],
+    className="col-7 px-2",
+    style={'height': 'calc(100vh - 100px)'},  # minus header bar height
+)
+
 # page layout
 layout = html.Div(
     [
@@ -160,9 +164,9 @@ layout = html.Div(
             [
                 FIRST_COLUMN,
                 SECOND_COLUMN,
-                THIRD_COLUMN,
+                # THIRD_COLUMN,
             ],
-            # style={"width": "100%", "height": "100%"}
+            style={"width": "100%", "height": "100%"}
         )
     ],
     # className="container",
