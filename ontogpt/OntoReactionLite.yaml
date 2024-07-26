@@ -1,0 +1,82 @@
+# modified (simplified) OntoReaction
+id: https://www.theworldavatar.com/kg/ontoreaction/
+name: OntoReaction
+description: >-
+  An ontology used to describe chemical reactions.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  linkml: https://w3id.org/linkml/
+  ontoreaction: https://www.theworldavatar.com/kg/ontoreaction/
+
+default_prefix: ontoreaction
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  ReactionDescription:
+    tree_root: true
+    attributes:
+      reactions:
+        description: semicolon-separated list of the chemical reactions that are described in this description
+        range: ChemicalReaction
+        multivalued: true
+      provenance:
+        description: origin of this reaction description, usually from a research article, a patent, or an electronic notebook.
+        range: string
+
+  Compound:
+    is_a: NamedEntity
+    attributes:
+      identifier:
+        description: chemical identifier for this compound
+        range: string
+      quantity:
+        description: quantity information associated with this compound
+        range: CompoundQuantity
+
+  CompoundQuantity:
+    is_a: NamedEntity
+    attributes:
+      value:
+        description: the numerical value of this amount
+        range: float
+      unit:
+        description: the unit of this amount
+        range: string
+
+  ReactionCondition:
+    is_a: NamedEntity
+    attributes:
+      temperature:
+        description: the temperature specification at which the reaction was conducted
+        range: string
+      duration:
+        description: the duration of this reaction after which the product was collected and analyzed
+        range: string
+
+  ChemicalReaction:
+#    is_a: NamedEntity
+    attributes:
+      base:
+        description: A chemical species or molecular entity having an available pair of electrons capable of forming a covalent bond with a hydron (proton) (see Bronsted base) or with the vacant orbital of some other species (see Lewis base). [doi:10.1351/goldbook.B00601]
+        range: Compound
+      catalyst:
+        description: A substance that increases the rate of a reaction without modifying the overall standard Gibbs energy change in the reaction. [doi:10.1351/goldbook.C00876]
+        range: Compound
+      solvent:
+        description: the compound used as a solvent for this reaction
+        range: Compound
+      reactants:
+        description: the compound used as a reactant for this reaction, this compound should not be a base, a catalyst, nor a solvent
+        range: Compound
+        multivalued: true
+      products:
+        description: semicolon-separated list of the compounds that were made or are to be made in this reaction
+        range: Compound
+        multivalued: true
+      condition:
+        description: Specifications of the condition at which the reaction was or is to be conducted.
+        range: ReactionCondition

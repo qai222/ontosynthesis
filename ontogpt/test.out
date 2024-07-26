@@ -1,0 +1,71 @@
+WARNING:ontogpt.clients:llm_gpt4all module not found. GPT4All support will be disabled.
+WARNING:ontogpt.engines.knowledge_engine:GPT4All client not available. GPT4All support will be disabled.
+INFO:root:Logger root set to level 20
+INFO:root:Found model: MODEL_GPT_4_TURBO, provided by OpenAI.
+INFO:root:Input file: test.txt
+INFO:root:Input text: Palladium acetate (45 mg, 0.2 mmol), BINAP (62 mg, 0.1 mmol) and cesium carbonate (650 mg, 2 mmol) were suspended in anhydrous 1,4-dioxane (3 ml) under an arg
+on atmosphere and sonicated for 45 minutes. 2-Bromo-4-methylpyrimidine (173 mg, 1 mmol) and tert-butyl piperazine-1-carboxylate (208 mg, 1.3 mmol) were dissolved in 3 ml anhydrous
+1,4-dioxane and the resulting solution was added to the catalyst-containing mixture. The resulting mixture was stirred at 110\u00b0 C. overnight, afterwards diluted with ethyl acet
+ate and filtered. The filtrate was evaporated to dryness under reduced pressure and the residue was purified by column chromatography (silica, gradient from DCM to DCM/ethyl acetate 8/2) to yield 120 mg of a brown oil (0.43 mmol, 43%)
+INFO:ontogpt.io.template_loader:Loading custom schema from OntoReactionLite.yaml
+WARNING:rdflib.term:F:\Projects\ontosynthesis\.venv\Lib\site-packages\linkml_runtime\linkml_model\model\schema\types does not look like a valid URI, trying to serialize this will break.
+WARNING:rdflib.term:F:\Projects\ontosynthesis\.venv\Lib\site-packages\linkml_runtime\linkml_model\model\schema\types does not look like a valid URI, trying to serialize this will break.
+---
+input_text: Palladium acetate (45 mg, 0.2 mmol), BINAP (62 mg, 0.1 mmol) and cesium
+  carbonate (650 mg, 2 mmol) were suspended in anhydrous 1,4-dioxane (3 ml) under
+  an argon atmosphere and sonicated for 45 minutes. 2-Bromo-4-methylpyrimidine (173
+  mg, 1 mmol) and tert-butyl piperazine-1-carboxylate (208 mg, 1.3 mmol) were dissolved
+  in 3 ml anhydrous 1,4-dioxane and the resulting solution was added to the catalyst-containing
+  mixture. The resulting mixture was stirred at 110\u00b0 C. overnight, afterwards
+  diluted with ethyl acetate and filtered. The filtrate was evaporated to dryness
+  under reduced pressure and the residue was purified by column chromatography (silica,
+  gradient from DCM to DCM/ethyl acetate 8/2) to yield 120 mg of a brown oil (0.43
+  mmol, 43%)
+raw_completion_output: |-
+  reactions: Palladium acetate, BINAP, cesium carbonate, and anhydrous 1,4-dioxane reacted together under an argon atmosphere followed by the addition of 2-Bromo-4-methylpyrimidine and tert-butyl piperazine-1-carboxylate leading to a product which was purified by column chromatography.
+  provenance: This reaction description appears to be derived from a research article or laboratory notebook, though specific source details such as article title, authors, or journal are not provided in the text.
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  base: <A chemical species or molecular entity having an available pair of electrons capable of forming a covalent bond with a hydron (proton) (see Bronsted base) or with the vacant orbital of some other species (see Lewis base). [doi:10.1351/goldbook.B00601]>
+  catalyst: <A substance that increases the rate of a reaction without modifying the overall standard Gibbs energy change in the reaction. [doi:10.1351/goldbook.C00876]>
+  solvent: <the compound used as a solvent for this reaction>
+  reactants: <the compound used as a reactant for this reaction, this compound should not be a base, a catalyst, nor a solvent>
+  products: <semicolon-separated list of the compounds that were made or are to be made in this reaction>
+  condition: <Specifications of the condition at which the reaction was or is to be conducted.>
+
+
+  Text:
+  Palladium acetate, BINAP, cesium carbonate, and anhydrous 1,4-dioxane reacted together under an argon atmosphere followed by the addition of 2-Bromo-4-methylpyrimidine and tert-butyl piperazine-1-carboxylate leading to a product which was purified by column chromatography.
+
+  ===
+
+extracted_object:
+  reactions:
+    - base: AUTO:%3Ccesium%20carbonate%3E
+      catalyst: AUTO:%3CPalladium%20acetate%3B%20BINAP%3E
+      solvent: AUTO:%3Canhydrous%201%2C4-dioxane%3E
+      reactants:
+        - AUTO:%3C2-Bromo-4-methylpyrimidine
+        - AUTO:tert-butyl%20piperazine-1-carboxylate%3E
+      products:
+        - AUTO:%3Cproduct%20purified%20by%20column%20chromatography%3E
+      condition: AUTO:%3Cunder%20an%20argon%20atmosphere%3E
+  provenance: This reaction description appears to be derived from a research article
+    or laboratory notebook, though specific source details such as article title,
+    authors, or journal are not provided in the text.
+named_entities:
+  - id: AUTO:%3Ccesium%20carbonate%3E
+    label: <cesium carbonate>
+  - id: AUTO:%3CPalladium%20acetate%3B%20BINAP%3E
+    label: <Palladium acetate; BINAP>
+  - id: AUTO:%3Canhydrous%201%2C4-dioxane%3E
+    label: <anhydrous 1,4-dioxane>
+  - id: AUTO:%3C2-Bromo-4-methylpyrimidine
+    label: <2-Bromo-4-methylpyrimidine
+  - id: AUTO:tert-butyl%20piperazine-1-carboxylate%3E
+    label: tert-butyl piperazine-1-carboxylate>
+  - id: AUTO:%3Cproduct%20purified%20by%20column%20chromatography%3E
+    label: <product purified by column chromatography>
+  - id: AUTO:%3Cunder%20an%20argon%20atmosphere%3E
+    label: <under an argon atmosphere>
