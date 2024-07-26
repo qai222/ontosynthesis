@@ -6,3 +6,5 @@ dash_bootstrap_components
 dash_renderjson
 networkx
 pydantic
+loguru
+matplotlib
